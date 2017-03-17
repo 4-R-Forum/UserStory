@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="1AEC6D6488784674A83594D00E8BB23F" action="add">
+  <item_query>&lt;Item type="{@type}" id="{@id}" levels= "1" action="get" /&gt;</item_query>
+  <label xml:lang="en">Show Element</label>
+  <location>client</location>
+  <method keyed_name="userstory_show_element" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>userstory_show_element</name>
+   </Item>
+  </method>
+  <target>none</target>
+  <type>item</type>
+  <name>userstory_show_element</name>
+ </Item>
+</AML>

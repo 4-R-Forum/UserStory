@@ -1,0 +1,145 @@
+﻿<AML>
+ <Item type="RelationshipType" id="42EDAF45FF66428E96268BD7A424AEBF" action="add" dependencyLevel="1">
+  <auto_search>1</auto_search>
+  <behavior>float</behavior>
+  <copy_permissions>0</copy_permissions>
+  <create_related>0</create_related>
+  <hide_in_all>0</hide_in_all>
+  <inc_rel_key_name>1</inc_rel_key_name>
+  <inc_related_key_name>1</inc_related_key_name>
+  <is_list_type>0</is_list_type>
+  <label xml:lang="en">Steps</label>
+  <new_show_related>0</new_show_related>
+  <related_notnull>0</related_notnull>
+  <related_option>2</related_option>
+  <relationship_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">
+   <Item type="ItemType" id="7CB056E1A4DA45D4B9360AD8064395A7" action="add">
+    <allow_private_permission>1</allow_private_permission>
+    <auto_search>0</auto_search>
+    <enforce_discovery>0</enforce_discovery>
+    <hide_where_used>0</hide_where_used>
+    <implementation_type>table</implementation_type>
+    <instance_data>USERTASKSTEP</instance_data>
+    <is_dependent>0</is_dependent>
+    <is_relationship>1</is_relationship>
+    <is_versionable>0</is_versionable>
+    <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+    <show_parameters_tab>1</show_parameters_tab>
+    <structure_view>tab view</structure_view>
+    <unlock_on_logout>0</unlock_on_logout>
+    <use_src_access>1</use_src_access>
+    <name>UserTaskStep</name>
+    <Relationships>
+     <Item type="Property" id="CE28C3CE5EC044D2BF716E2053D525DE" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>integer</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">item_number</label>
+      <order_by>1</order_by>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3584</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+      <track_history>0</track_history>
+      <name>item_number</name>
+     </Item>
+     <Item type="Property" id="C3CD438F56534475BF36B1CA930AA974" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>1</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">macro_string</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3840</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+      <stored_length>128</stored_length>
+      <track_history>0</track_history>
+      <name>macro_string</name>
+     </Item>
+     <Item type="Property" id="F4EFAD4DA1E5478CBB7EBA667B760384" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">Step</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>2</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+      <stored_length>2000</stored_length>
+      <track_history>0</track_history>
+      <name>step</name>
+     </Item>
+     <Item type="View" id="8A148E19789A4708BBCFA7118EB784BF" action="add">
+      <client>js</client>
+      <related_id keyed_name="UserStoryStep" type="Form">0EB602409BE0494BAAA663E1C11853D2</related_id>
+      <role keyed_name="World" type="Identity">
+       <Item type="Identity" action="get" select="id">
+        <name>World</name>
+       </Item>
+      </role>
+      <show_ssvc>0</show_ssvc>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+      <type>default</type>
+     </Item>
+     <Item type="View" id="A54E9F4E10974001ACB2BCA3EF1551F9" action="add">
+      <client>js</client>
+      <related_id keyed_name="UserTaskStep" type="Form">CDD0D3CF80A34F7E9FAD8FFAC7C42A17</related_id>
+      <role keyed_name="World" type="Identity">
+       <Item type="Identity" action="get" select="id">
+        <name>World</name>
+       </Item>
+      </role>
+      <show_ssvc>0</show_ssvc>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+      <type>default</type>
+     </Item>
+     <Item type="TOC Access" id="F519375D1B5A45519C1C0C4B6732220D" action="add">
+      <related_id keyed_name="Nobody" type="Identity">80E83729EDE8460A97F0526208517FE7</related_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+     </Item>
+    </Relationships>
+   </Item>
+  </relationship_id>
+  <sort_order>1</sort_order>
+  <source_id keyed_name="UserStoryTask" type="ItemType" name="UserStoryTask">C7040CA9C9C941A48E69C78DE47835E5</source_id>
+  <name>UserTaskStep</name>
+ </Item>
+ <Item type="ItemType" id="7CB056E1A4DA45D4B9360AD8064395A7" action="edit">
+  <Relationships>
+   <Item type="Property" action="edit" where="source_id='7CB056E1A4DA45D4B9360AD8064395A7' and name='sort_order'">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>1</sort_order>
+    <source_id keyed_name="UserTaskStep" type="ItemType" name="UserTaskStep">7CB056E1A4DA45D4B9360AD8064395A7</source_id>
+    <track_history>0</track_history>
+    <name>sort_order</name>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

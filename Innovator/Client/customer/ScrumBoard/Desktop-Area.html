@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<!-- (c) Copyright by Aras Corporation, 2004-2013. -->
+<html>
+<head>
+	<style type="text/css">
+		@import "../../javascript/dojo/resources/dojo.css";
+		@import "../../javascript/dijit/themes/claro/claro.css";
+		@import "../../javascript/include.aspx?classes=common.css";
+
+		html, body{
+			overflow: hidden;
+			height: 100%;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+	<script>
+		var aras = parent.parent.parent.aras;
+	</script>
+	<script type="text/javascript" src="../../javascript/include.aspx?classes=/dojo.js" data-dojo-config="isDebug: false, parseOnLoad: false, baseUrl:'../../javascript/dojo'"></script>
+	<script type="text/javascript" src="../../javascript/include.aspx?classes=XmlDocument"></script>
+	<script type="text/javascript">
+		var desktop = null,
+			defaultMaskPos = 0,
+			desktopNodes = [];
+
+		var topWnd = parent.parent.parent;
+		clientControlsFactory.createControl("Aras.Client.Controls.Experimental.Workflow", "desktop", function(control) {
+			desktop = control;
+
+			clientControlsFactory.on(desktop, {
+				"onMenuInit": initmenu,
+				"onDoubleClick": onDblClick,
+				"onDrop": onDrop
+			});
+			clientControlsFactory.on(desktop.contextMenu, {
+				"onItemClick": onMenuClick
+			});
+			desktop.load(onLoadArea());
+		});
+
+		function onLoadArea()
+		{
+			var xml = "";
+			xml += "<Process nodeSize='24' nodeBgColor='#ffffff' nodeNameColor='#0000ff' nodeLabel1Color='#808080' nodeNameFont='Arial-9' nodeLabel1Font='Arial-9' transitionLineColor='#000000' transitionNameColor='#000000' transitionNameFont='Arial-8'>";
+			xml += " <Menu default='no' />";
+			xml += "</Process>";
+
+			var myDesktopArea = topWnd.aras.createXMLDocument();
+			myDesktopArea.loadXML(xml);
+
+			var Icons = new Object();
+			var Coords = new Array();
+			var counter = 0;
+
+			var xi = 1;
+			var yi = 0;
+			var desktop_is_full = false;
+
+			function addItemToDesktop(DesktopItem)
+			{ 
+				with (topWnd.aras)
+				{
+					var itemTypeId = getItemProperty(DesktopItem, 'source_type');
+					var id = getItemProperty(DesktopItem, 'source_id');
+
+					var q = topWnd.aras.newIOMItem('ItemType', "get");
+					q.setAttribute("levels", 0);
+					q.setAttribute("select", "keyed_name,large_icon");
+					q.setProperty("id", itemTypeId);
+					var r = q.apply();
+					if (r.isError())
+					{
+						return;
+					}
+					var ItemType = getItemProperty(r.dom.selectSingleNode('//Item'), 'keyed_name');
+
+					if (Icons[ItemType] == undefined)
+					{
+						Icons[ItemType] = getItemProperty(r.dom.selectSingleNode('//Item'), 'large_icon');
+					}
+					var q = topWnd.aras.newIOMItem(ItemType, "get");
+					q.setAttribute("levels", 0);
+					q.setAttribute("select", "keyed_name,locked_by_id");
+					q.setAttribute('max_generation', "1");
+					q.setProperty("id", id);
+					var r = q.apply();
+					if (r.isError())
+					{
+						return;
+					}
+
+					var item = r.dom.selectSingleNode("//Item");
+					if (!item) return;
+
+					counter += 1;
+
+					var x_pos = parseInt(getItemProperty(DesktopItem, 'x_pos'));
+					var y_pos = parseInt(getItemProperty(DesktopItem, 'y_pos'));
+
+					function recalc_xy_pos()
+					{
+						x_pos = xi * 120 - 60;
+						y_pos = yi * 50 - 30;
+						if (Math.round((xi) / 2) == (xi) / 2) //is even number
+						{
+							y_pos += 10;
+						}
+					}
+
+					if (x_pos == 0 && y_pos == 0)
+						while (true)
+						{
+							if (!desktop_is_full)
+							{
+								yi++;
+								recalc_xy_pos();
+								if (y_pos + 60 > desktop.clientHeight)
+								{
+									xi++;
+									yi = 1;
+								}
+								recalc_xy_pos();
+								if (x_pos + 60 > desktop.clientWidth)
+								{
+									desktop_is_full = true;
+									xi = 1;
+								}
+							}
+							else
+							{
+								xi++;
+								recalc_xy_pos();
+								if (x_pos + 60 > desktop.clientWidth)
+								{
+									xi = 1;
+									yi++;
+								}
+							}
+
+							recalc_xy_pos();
+							if (TestPos(x_pos, y_pos, Coords)) break;
+						}
+
+					var pos = new Object();
+					pos.x = x_pos;
+					pos.y = y_pos;
+					Coords.push(pos);
+
+					var name = getItemProperty(item, 'keyed_name');
+					var locked_by_id = getItemProperty(item, 'locked_by_id');
+
+					var is_locked = 0;
+					//if (locked_by_id)
+						//is_locked = (locked_by_id == getUserID() ? 1 : 2);
+
+					var node = myDesktopArea.createElement("Node");
+					myDesktopArea.documentElement.appendChild(node);
+
+					var maskPath = is_locked === 1 ? '../images/LockedByMe.svg' : (is_locked === 2 ? '../images/LockedByOthers.svg' : '../cbin/icons/1x1.gif');
+
+					node.setAttribute('id', DesktopItem.getAttribute('id'));
+					desktopNodes[DesktopItem.getAttribute('id')] = {
+						sourceId: id,
+						itemType: ItemType,
+						isLocked: is_locked
+					};
+					node.setAttribute('name', (name.substring(0, 35) != name) ? name.substring(0, 33) + "..." : name);
+					node.setAttribute('mask' + defaultMaskPos, maskPath);
+					node.setAttribute('x', x_pos);
+					node.setAttribute('y', y_pos);
+					//node.setAttribute('imgSrc', Icons[ItemType]);
+					node.setAttribute('imgSrc', getItemProperty(DesktopItem, 'quarters_img'));
+					node.setAttribute('bgColor', '#ffffff');
+				} //with aras
+			} // addItemToDesktop function
+
+			for (var i = 0; i < parent.DesktopItems.length; ++i)
+			{
+				var DesktopItem = parent.DesktopItems[i];
+				var x_pos = parseInt(topWnd.aras.getItemProperty(DesktopItem, 'x_pos'));
+				var y_pos = parseInt(topWnd.aras.getItemProperty(DesktopItem, 'y_pos'));
+				if (!(x_pos == 0 && y_pos == 0))
+				{//position is fixed
+					addItemToDesktop(DesktopItem);
+				}
+			} //for loop
+
+			for (var i = 0; i < parent.DesktopItems.length; ++i)
+			{
+				var DesktopItem = parent.DesktopItems[i];
+				var x_pos = parseInt(topWnd.aras.getItemProperty(DesktopItem, 'x_pos'));
+				var y_pos = parseInt(topWnd.aras.getItemProperty(DesktopItem, 'y_pos'));
+				if (x_pos == 0 && y_pos == 0)
+				{//position isn't fixed
+					addItemToDesktop(DesktopItem);
+				}
+			} //for loop
+
+			parent.WStitle.set_length(counter);
+			return myDesktopArea.xml;
+		}
+
+		function TestPos(x_pos, y_pos, Coords) {
+			for (var i = 0; i < Coords.length; i++) {
+				var pos = Coords[i];
+				if (Math.abs(pos.x - x_pos) < 20 && Math.abs(pos.y - y_pos) < 20) {
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+		function onMenuClick(menuChoice, node)
+		{
+			var nodeId = node.id;
+			if (!nodeId)
+			{
+				return;
+			}
+
+			var srcId,
+				itemTypeName,
+				url,
+				params,
+				options,
+				setBySource = function (sourceId, propName, value)
+				{
+					var id,
+						nodes = desktopNodes,
+						node;
+					if (typeof propName === 'string' && propName)
+					{
+						for (id in nodes)
+						{
+							node = nodes[id];
+							if (node.sourceId === sourceId)
+							{
+								if (propName.slice(0, 4) === 'mask')
+								{
+									desktop.nodes.set(id, 'mask', parseInt(propName.slice(4, 5)), value);
+								} else
+								{
+									node[propName] = value;
+								}
+							}
+						}
+					}
+				};
+
+			srcId = desktopNodes[nodeId].sourceId;
+			itemTypeName = desktopNodes[nodeId].itemType;
+
+			switch (menuChoice)
+			{
+				case topWnd.aras.getResource("", "common.view"):
+					topWnd.main.menu.viewSelectedItem(srcId, itemTypeName);
+					break;
+				case topWnd.aras.getResource("", "common.edit"):
+					topWnd.main.menu.viewSelectedItem(srcId, itemTypeName);
+					break;
+				case topWnd.aras.getResource("", "common.lock"):
+					if (topWnd.aras.lockItem(srcId, itemTypeName))
+					{
+						setBySource(srcId, 'isLocked', 1);
+						setBySource(srcId, 'mask' + defaultMaskPos, '../images/LockedByMe.svg');
+					}
+					break;
+				case topWnd.aras.getResource("", "common.unlock"):
+					if (topWnd.aras.unlockItem(srcId, itemTypeName))
+					{
+						setBySource(srcId, 'isLocked', 0);
+						setBySource(srcId, 'mask' + defaultMaskPos, '../cbin/icons/item_node.gif');
+					}
+					break;
+				case topWnd.aras.getResource("", "common.remove_from_desktop"):
+					if (topWnd.aras.deleteItem(itemTypeName, nodeId, true))
+					{
+						parent.loadDesktopItems();
+						parent.refreshTitle();
+						desktop.nodes.remove(nodeId);
+					}
+					break;
+				case topWnd.aras.getResource("", "common.whereused"):
+					url = 'whereUsed.html?id=' + srcId + '&type_name=' + itemTypeName + '&curLy=' + topWnd.aras.getPreferenceItemProperty("Core_GlobalLayout", null, "core_structure_layout") + '&toolbar=1&where=dialog';
+					options = {
+						dialogHeight: 400,
+						dialogWidth: 600,
+						resizable: true
+					};
+					topWnd.aras.modalDialogHelper.show("DefaultPopup", topWnd.main, { aras: topWnd.aras, title: topWnd.aras.getResource("", "whereused.wu") }, options, url);
+					break;
+			}
+		}
+
+
+		function onDrop(nodeId)
+		{
+			if (!nodeId)
+			{
+				return;
+			}
+			var this_type=desktopNodes[nodeId].itemType;
+			var dropLocation = desktop.nodes.get(nodeId, 'XY');
+			AML = "<Item type='"+this_type+"' action='edit' id='" + nodeId + "' doGetItem='0'><x_pos>" + dropLocation.x + "</x_pos><y_pos>" + dropLocation.y + "</y_pos></Item>";
+			topWnd.aras.applyItem(AML);
+		}
+
+		function initmenu(nodeId, location, isBreak)
+		{
+			var mnu = desktop.contextMenu,
+		locked;
+			mnu.removeAll();
+			if (!nodeId)
+			{
+				return false;
+			}
+
+			desktop.nodes.select(nodeId, true);
+			locked = desktopNodes[nodeId].isLocked;
+
+			switch (locked)
+			{
+				case 0:
+					mnu.add(topWnd.aras.getResource("", "common.view"), topWnd.aras.getResource("", "common.view"));
+					//mnu.add(topWnd.aras.getResource("", "common.lock"), topWnd.aras.getResource("", "common.lock"));
+					break;
+				case 1:
+					mnu.add(topWnd.aras.getResource("", "common.edit"), topWnd.aras.getResource("", "common.edit"));
+					mnu.add(topWnd.aras.getResource("", "common.unlock"), topWnd.aras.getResource("", "common.unlock"));
+					break;
+				case 2:
+					mnu.add(topWnd.aras.getResource("", "common.view"), topWnd.aras.getResource("", "common.view"));
+					break;
+			}
+
+			//mnu.add(topWnd.aras.getResource("", "common.remove_from_desktop"), //topWnd.aras.getResource("", "common.remove_from_desktop"));
+			mnu.add(topWnd.aras.getResource("", "common.whereused"), topWnd.aras.getResource("", "common.whereused"));
+		}
+
+		function onDblClick()
+		{
+			var nodeId = desktop.nodes.getSelected();
+
+			if (!nodeId)
+			{
+				return;
+			}
+
+			topWnd.main.menu.viewSelectedItem(desktopNodes[nodeId].sourceId, desktopNodes[nodeId].itemType);
+			return;
+		}
+	</script>
+</head>
+<body class="claro">
+	<div id="desktop" style="width: 100%; height: 100%; overflow:auto;">
+	</div>
+</body>
+</html>

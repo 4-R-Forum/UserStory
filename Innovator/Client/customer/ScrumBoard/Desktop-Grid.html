@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<!-- (c) Copyright by Aras Corporation, 2004-2013. -->
+<html>
+<head>
+<style type="text/css">
+	@import "../../javascript/dojo/resources/dojo.css";
+	@import "../../javascript/dijit/themes/claro/claro.css";
+	@import "../../javascript/dojox/grid/resources/claroGrid.css";
+	@import "../../javascript/include.aspx?classes=common.css";
+	@import "../../styles/default.css";
+
+	html,body{
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+</style>
+<script>
+	var aras = parent.parent.parent.aras;
+	var topWnd = parent.parent.parent;
+</script>
+<script type="text/javascript" src="../../javascript/include.aspx?classes=/dojo.js" data-dojo-config="isDebug: false, parseOnLoad: false, baseUrl:'../../javascript/dojo'"></script>
+<script type="text/javascript">
+	var desktop;
+
+	clientControlsFactory.createControl("Aras.Client.Controls.Public.GridContainer", undefined, function(control) {
+		desktop = control;
+
+		clientControlsFactory.on(desktop, {
+			"gridDoubleClick": onDblClick,
+			"gridMenuInit": initMenu
+		});
+		desktop.setLayout_Experimental([{ field: "img", name: " ", width: "5%", styles: "text-align: center;", headerStyles: "text-align: center;", formatter: desktop.formatter_Experimental.img },
+							{ field: "item", name: aras.getResource("","common.item"), width: "50%", styles: "text-align: left;", headerStyles: "text-align: center;" },
+							{ field: "type", name: aras.getResource("","common.type"), width: "45%", styles: "text-align: left;", headerStyles: "text-align: center;" } ]);
+		onLoadGrid();
+		desktop.setMultiselect(false);
+		desktop.contexMenu_Experimental.addRange(contextMenu);
+	});
+
+function onLoadGrid()
+{
+	var ItemTypeLabels = {};
+	var counter = 0;
+	var res = null;
+	var items = [];
+
+	for (var i = 0, desktopItem; desktopItem = parent.DesktopItems[i]; i++) {
+		var itemTypeId = aras.getItemProperty(desktopItem, "source_type");
+		var id = aras.getItemProperty(desktopItem, "source_id");
+
+		var q = aras.newIOMItem("ItemType", "get");
+		q.setAttribute("levels", 0);
+		q.setAttribute("select", "keyed_name,label");
+		q.setProperty("id", itemTypeId);
+		res = q.apply();
+		if (res.isError()) {
+			return;
+		}
+		var ItemType = aras.getItemProperty(res.dom.selectSingleNode("//Item"), "keyed_name");
+
+		if (ItemTypeLabels[ItemType] == undefined) {
+			var label = aras.getItemProperty(res.dom.selectSingleNode("//Item") ,"label");
+			if (!label) label = ItemType;
+			ItemTypeLabels[ItemType] = label;
+		}
+
+		var q = aras.newIOMItem(ItemType, "get");
+		q.setAttribute("levels", 0);
+		q.setAttribute("select", "keyed_name,locked_by_id");
+		q.setAttribute("max_generation", "1");
+		q.setProperty("id", id);
+		res = q.apply();
+		if (res.isError()) {
+			return;
+		}
+
+		var item = res.dom.selectSingleNode("//Item");
+		if (!item) continue;
+
+		id = item.getAttribute("id");
+		counter += 1;
+
+		var name = aras.getItemProperty(item, "keyed_name");
+		var locked_by_id = aras.getItemProperty(item, "locked_by_id");
+
+		var is_locked = 0;
+		var img = "";
+		if (locked_by_id) {
+			img = "../images/" + (locked_by_id == aras.getUserID() ? "LockedByMe.svg" : "LockedByAnyone.svg");
+			is_locked = (locked_by_id == aras.getUserID() ? 1 : 2);
+		} else {
+			img = "icons/item_node.gif";
+		}
+
+		items.push( { uniqueId: desktopItem.getAttribute("id"), img: img, item: name, type: ItemTypeLabels[ItemType],
+					sourceId: desktopItem.getElementsByTagName("source_id")[0].text, ItemType: ItemType } );
+	}
+
+	desktop.setArrayData_Experimental(items);
+	parent.WStitle.set_length(counter);
+}
+
+function setBySource (sourceId, propName, value) {
+	var i,
+		itemsIds = desktop.items_Experimental.getAllId();
+	if (typeof propName === "string" && propName) {
+		for (i = 0; i < itemsIds.length; i++) {
+			if (desktop.items_Experimental.get(itemsIds[i], "value", "sourceId") === sourceId) {
+				desktop.items_Experimental.set(itemsIds[i], "value", "img", value);
+			}
+		}
+	}
+};
+
+var contextMenu = [
+	{
+		id: "view",
+		name: aras.getResource("","common.view"),
+		onClick: function (rowId) {
+			topWnd.main.menu.viewSelectedItem(desktop.items_Experimental.get(rowId, "value", "sourceId"), desktop.items_Experimental.get(rowId, "value", "ItemType"));
+		}
+	},
+	{
+		id: "lock",
+		name: aras.getResource("","common.lock"),
+		onClick: function (rowId) {
+			if (aras.lockItem(desktop.items_Experimental.get(rowId, "value", "sourceId"), desktop.items_Experimental.get(rowId, "value", "ItemType"))) {
+				setBySource(desktop.items_Experimental.get(rowId, "value", "sourceId"), "img", "../images/LockedByMe.svg");
+			}
+		}
+	},
+	{
+		id: "edit",
+		name: aras.getResource("","common.edit"),
+		onClick: function (rowId) {
+			topWnd.main.menu.viewSelectedItem(desktop.items_Experimental.get(rowId, "value", "sourceId"), desktop.items_Experimental.get(rowId, "value", "ItemType"));
+		}
+	},
+	{
+		id: "unlock",
+		name: aras.getResource("","common.unlock"),
+		onClick: function (rowId) {
+			if (aras.unlockItem(desktop.items_Experimental.get(rowId, "value", "sourceId"), desktop.items_Experimental.get(rowId, "value", "ItemType"))) {
+				setBySource(desktop.items_Experimental.get(rowId, "value", "sourceId"), "img", "icons/item_node.gif");
+			}
+		}
+	},
+	{
+		id: "remove_from_desktop",
+		name: aras.getResource("","common.remove_from_desktop"),
+		onClick: function (rowId) {
+			if (aras.deleteItem("Desktop", rowId, true)) {
+				parent.loadDesktopItems();
+				parent.refreshTitle();
+				desktop.items_Experimental.remove(rowId);
+			}
+		}
+	},
+	{
+		id: "whereused",
+		name: aras.getResource("","common.whereused"),
+		onClick: function (rowId) {
+			var url = "whereUsed.html?id=" + desktop.items_Experimental.get(rowId, "value", "sourceId") +
+						"&type_name=" + desktop.items_Experimental.get(rowId, "value", "ItemType") +
+						"&curLy=" + aras.getPreferenceItemProperty("Core_GlobalLayout", null, "core_structure_layout") + "&toolbar=1&where=dialog";
+			aras.modalDialogHelper.show("DefaultPopup", window.parent.parent, { aras: aras, title: aras.getResource("", "whereused.wu") }, { dialogHeight: 400, dialogWidth: 600, resizable: true }, url);
+		}
+	}
+];
+
+function initMenu(row)
+{
+	var menu = desktop.contexMenu_Experimental;
+	var locked = desktop.items_Experimental.get(row, "value", "img");
+
+	if (locked == "icons/item_node.gif") {
+		menu.setDisable("view", false);
+		menu.setDisable("lock", false);
+		menu.setDisable("edit", true);
+		menu.setDisable("unlock", true);
+	}
+	else if (locked == "../images/LockedByMe.svg") {
+		menu.setDisable("view", true);
+		menu.setDisable("lock", true);
+		menu.setDisable("edit", false);
+		menu.setDisable("unlock", false);
+	}
+	else if (locked == "../images/LockedByOthers.svg") {
+		menu.setDisable("view", false);
+		menu.setDisable("lock", true);
+		menu.setDisable("edit", true);
+		menu.setDisable("unlock", true);
+	}
+}
+
+function onDblClick(node) {
+	topWnd.main.menu.viewSelectedItem(desktop.items_Experimental.get(node, "value", "sourceId"), desktop.items_Experimental.get(node, "value", "ItemType"));
+}
+</script>
+</head>
+<body class="claro">
+	<div id="gridTD" style="height: 100%;"></div>
+</body>
+</html>

@@ -1,0 +1,901 @@
+﻿<AML>
+ <Item type="ItemType" id="D70CE8262D64418CBC6106FBA1BFA8C1" action="add">
+  <allow_private_permission>1</allow_private_permission>
+  <auto_search>1</auto_search>
+  <class_structure><![CDATA[<class id="D70CE8262D64418CBC6106FBA1BFA8C1"><class id="79B098E417B342E2B4CB6E732322143C" name="Structure" /><class id="5BFA177ED0E74FCC8332EAF41A8303DD" name="Story" /></class>]]></class_structure>
+  <enforce_discovery>1</enforce_discovery>
+  <hide_where_used>0</hide_where_used>
+  <history_template keyed_name="Default" type="History Template">3BC16EF9E52B4F9792AB76BCE0492F29</history_template>
+  <implementation_type>table</implementation_type>
+  <instance_data>USERSTORY</instance_data>
+  <is_dependent>0</is_dependent>
+  <is_relationship>0</is_relationship>
+  <is_versionable>0</is_versionable>
+  <label xml:lang="en">User Story</label>
+  <label_plural xml:lang="en">User Stories</label_plural>
+  <large_icon>../Images/UserStory.svg</large_icon>
+  <open_icon>../Images/UserStory.svg</open_icon>
+  <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+  <show_parameters_tab>1</show_parameters_tab>
+  <structure_view>tab view</structure_view>
+  <unlock_on_logout>0</unlock_on_logout>
+  <use_src_access>0</use_src_access>
+  <name>UserStory</name>
+  <Relationships>
+   <Item type="Property" id="8A25B15A564D4B03AA35B5E96ABF91F1" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>text</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Criteria</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>19968</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>acceptance_criteria</name>
+   </Item>
+   <Item type="Property" id="F781F9E586AC4878BD3F7F6C8CDBB40E" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>150</column_width>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">As a</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3072</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>64</stored_length>
+    <track_history>0</track_history>
+    <name>as_a</name>
+   </Item>
+   <Item type="Property" id="02584FB828A24ABE91BE217EB16B9152" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>100</column_width>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Assigned</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>6784</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>64</stored_length>
+    <track_history>0</track_history>
+    <name>assigned_to</name>
+   </Item>
+   <Item type="Property" id="06D94FFF87564ACF99068B3A9F93375B" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="File" type="ItemType" name="File">8052A558B9084D41B9F11805E464F443</data_source>
+    <data_type>item</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <label xml:lang="en">Diagram</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>19712</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>concept_diagram</name>
+   </Item>
+   <Item type="Property" id="CAABA882B08B4814B117F3C2EC76F3E7" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>date</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Completed On</label>
+    <pattern>short_date</pattern>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>10368</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>date_completed</name>
+   </Item>
+   <Item type="Property" id="4DDC266AA56D4CCBB22CE7201CBCFC37" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>date</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Started On</label>
+    <pattern>short_date</pattern>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>10240</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>date_started</name>
+   </Item>
+   <Item type="Property" id="9DEE03886277408D81DA00B7ED9F2C7E" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>text</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">description</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20480</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>description</name>
+   </Item>
+   <Item type="Property" id="823F2D09E7F2480B89434E48D86EC5E3" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Estimate</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3584</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>estimate</name>
+   </Item>
+   <Item type="Property" id="31123F1A3F8D468B86A212ECB8F7423A" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>300</column_width>
+    <data_type>text</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">I want to</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3200</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>i_want_to</name>
+   </Item>
+   <Item type="Property" id="8154D97165CC46168A23A5D4E47B0497" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Implementation Outline</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>19584</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>2000</stored_length>
+    <track_history>0</track_history>
+    <name>implementation_outline</name>
+   </Item>
+   <Item type="Property" id="6611E1951DE348A591B8B2A1ECB3C18A" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Epic/Theme</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>80</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>10</stored_length>
+    <track_history>0</track_history>
+    <name>item_dot_number</name>
+   </Item>
+   <Item type="Property" id="16B07635520C432B90B1ED6ADA25D99E" action="add">
+    <column_alignment>right</column_alignment>
+    <column_width>50</column_width>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <keyed_name_order>1</keyed_name_order>
+    <label xml:lang="en">ID</label>
+    <order_by>3</order_by>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>70</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>item_number</name>
+   </Item>
+   <Item type="Property" id="0D27C42DF36A49B590ED21EFE31F13CA" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">m_vso_link</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20352</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>1024</stored_length>
+    <track_history>0</track_history>
+    <name>m_vso_link</name>
+   </Item>
+   <Item type="Property" id="CFADA423D2D34F3892A15E94B66B9F2D" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>250</column_width>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <keyed_name_order>2</keyed_name_order>
+    <label xml:lang="en">Name</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>120</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>512</stored_length>
+    <track_history>0</track_history>
+    <name>name</name>
+   </Item>
+   <Item type="Property" id="973218093A6943DAAB3FB89F4D9F7F21" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_source keyed_name="userstory_points">E58AE9B198D445E38E2D03222298BDD1</data_source>
+    <data_type>list</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Points</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3456</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>points</name>
+   </Item>
+   <Item type="Property" id="E73E84DC034A43C88FEB633DA7787E24" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_source keyed_name="userstory_priority">A842C5C7F9D94D8AA7E0D461C9C6AF46</data_source>
+    <data_type>list</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Priority</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>6912</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>priority</name>
+   </Item>
+   <Item type="Property" id="437FE81311DB474C90465BE1D676B514" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="quarters">29AD24E13288471781785D152ED395A4</data_source>
+    <data_type>list</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Ready</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>10496</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>quarters</name>
+   </Item>
+   <Item type="Property" id="5963BF08318D4DA2A32C7DDDF94D54D4" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>image</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Ready</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>130</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>quarters_img</name>
+   </Item>
+   <Item type="Property" id="5D1FEED34C964C64B9189D4340888ED1" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="Identity" type="ItemType" name="Identity">E582AB17663F4EF28460015B2BE9E094</data_source>
+    <data_type>item</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <label xml:lang="en">rated_by_id</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>800</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>rated_by_id</name>
+   </Item>
+   <Item type="Property" id="ACB25ED9F76F4D41B44F963F3D1C4C5E" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="quarters">29AD24E13288471781785D152ED395A4</data_source>
+    <data_type>list</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">User Rating</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>13440</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>rating</name>
+   </Item>
+   <Item type="Property" id="18AB72F48CEE47EABF1D4F83E7DC2D29" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_type>image</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Rating</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>140</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>rating_img</name>
+   </Item>
+   <Item type="Property" id="0F39EEAD55C242C5BB26EF32383FCF3A" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>300</column_width>
+    <data_type>text</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">In order to</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3328</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>so_that</name>
+   </Item>
+   <Item type="Property" id="295922C5ECA44F72A1114741DE1DE5CC" action="add">
+    <column_alignment>center</column_alignment>
+    <column_width>50</column_width>
+    <data_type>integer</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Sprint</label>
+    <order_by>1</order_by>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>60</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>sprint</name>
+   </Item>
+   <Item type="Property" id="4A93B5E0776C4C2E80BB477465AAA0EA" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="userstory_structure_type">4C7A176F63124E00A091C7E1A728EFB7</data_source>
+    <data_type>list</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">structure_type</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20736</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>structure_type</name>
+   </Item>
+   <Item type="Property" id="26EA25FC3E2F483ABDDA6D49AE0C2A64" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Test Plan</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>16512</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>64</stored_length>
+    <track_history>0</track_history>
+    <name>test_plan_reference</name>
+   </Item>
+   <Item type="Property" id="75D50868802540BAB0F51B95D291B90D" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Test Order</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>10624</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>test_plan_sort</name>
+   </Item>
+   <Item type="Property" id="77A8743559F94AEEAB44EECEC0691552" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_source keyed_name="userstory_sprint">A022B02B5B7B4702B4E2676421A6BD18</data_source>
+    <data_type>list</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Sprint</label>
+    <order_by>1</order_by>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>1</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>userstory_sprint</name>
+   </Item>
+   <Item type="Property" id="0D5BAFF13EF749FABD9E038C25EF8FAD" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_source keyed_name="userstory_state">88E746CCF7AB49A783F3DB1750A32182</data_source>
+    <data_type>list</data_type>
+    <default_value xml:lang="en">New</default_value>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Status</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>7040</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>userstory_state</name>
+   </Item>
+   <Item type="Property" id="04B173FC4D0F43F48740CD870395B363" action="add">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <data_source keyed_name="userstory_team">69B994C9B9364EFEBF3F310A792DEBF4</data_source>
+    <data_type>list</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Team</label>
+    <order_by>2</order_by>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>2</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>userstory_team</name>
+   </Item>
+   <Item type="Property" id="3B7A3FE7E3D94116880CBEC5CDBD0F1B" action="add">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="userstory_type">810F98ED5B814168A80478E928A77476</data_source>
+    <data_type>list</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Type</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>10112</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>256</stored_length>
+    <track_history>0</track_history>
+    <name>userstory_type</name>
+   </Item>
+   <Item type="Property" id="8AE0C2B524E943418593E90F4D21CAA2" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Video</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>19840</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>512</stored_length>
+    <track_history>0</track_history>
+    <name>video_url</name>
+   </Item>
+   <Item type="Property" id="888E3AC8FC1D46219A414B9BA3FC870C" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">VSO Order</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20608</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>vso_order</name>
+   </Item>
+   <Item type="Property" id="780D041F8BBD4FF185D3AB6E93863FBA" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">x_pos</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20864</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>x_pos</name>
+   </Item>
+   <Item type="Property" id="E75EE876562C4FC7A5F8FB1A4E1545C3" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>integer</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">y_pos</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>20992</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>y_pos</name>
+   </Item>
+   <Item type="View" id="228A111D05C747F19413DFF07F3EAD7B" action="add">
+    <client>js</client>
+    <display_priority>1</display_priority>
+    <related_id keyed_name="UserStory Structure" type="Form">B92D8B8F279945009666FFF9745346C6</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>add</type>
+   </Item>
+   <Item type="View" id="197D8458D04A49559CEA23882BE57643" action="add">
+    <client>js</client>
+    <display_priority>1</display_priority>
+    <form_classification>Story</form_classification>
+    <related_id keyed_name="UserStory" type="Form">17620658777D41B8AB59991C8A332A8B</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="View" id="2EC456DE264B4E1BB354772E54F009F7" action="add">
+    <client>js</client>
+    <display_priority>1</display_priority>
+    <form_classification>Structure</form_classification>
+    <related_id keyed_name="UserStory Structure" type="Form">B92D8B8F279945009666FFF9745346C6</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="View" id="C4A5723A1C7B423DB74BC1990ADDA229" action="add">
+    <client>js</client>
+    <display_priority>99</display_priority>
+    <form_classification>Structure</form_classification>
+    <related_id keyed_name="UserStory MultiLevel Main" type="Form">4E91A997FE6A4C4BA6162E93E597FA51</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="View" id="F9A49E1E45A148EABF0864E6CE9E8E05" action="add">
+    <client>js</client>
+    <display_priority>2</display_priority>
+    <related_id keyed_name="UserrStoryAcceptanceCriteria" type="Form">0CE2686C9F5D4E1F9BE6F5F19EE74015</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="View" id="73C93B5904FF4D0E888D87412BFA8FFA" action="add">
+    <client>js</client>
+    <display_priority>1</display_priority>
+    <related_id keyed_name="UserStory Structure" type="Form">B92D8B8F279945009666FFF9745346C6</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <type>edit</type>
+   </Item>
+   <Item type="Server Event" id="ECACE668A6674856B183D7D808FD61B6" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="userstory_onbefore" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>userstory_onbefore</name>
+     </Item>
+    </related_id>
+    <server_event>onBeforeUpdate</server_event>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+   <Item type="Item Action" id="53C15219594B4EF3BBC96DECB7771C52" action="add">
+    <related_id keyed_name="userstory_copy_to_url" type="Action">EBB479E91FB142B083B05CEAB078DD5D</related_id>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+   <Item type="TOC Access" id="042A6A2148BF44C4993C10A934E2618F" action="add">
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <category>UserStories</category>
+   </Item>
+   <Item type="TOC Access" id="05C8CB18B7054DE8B770B3461BF368AF" action="add">
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <category>UserStories</category>
+   </Item>
+   <Item type="Can Add" id="B93AE6CEAA434BB9B919C0F923BD28CF" action="add">
+    <can_add>1</can_add>
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+   <Item type="Can Add" id="9B04E1988AF446F7A75D9E4E4E72E750" action="add">
+    <can_add>1</can_add>
+    <related_id keyed_name="User Story Admins" type="Identity">C170DB26E81649A598823892845A3268</related_id>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+   <Item type="Allowed Permission" id="CF4C940F6CE04E2582AAE856C121FF9A" action="add">
+    <is_default>1</is_default>
+    <related_id keyed_name="UserStory" type="Permission">14C2949B47F84E80B45178109EBA46F4</related_id>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+   <Item type="Item Report" id="B2477F6FEE2449B398D8A78D234FD914" action="add">
+    <related_id keyed_name="User Story User Guide 2" type="Report">F01F710AC2654F169F1D7F4229139E5C</related_id>
+    <sort_order>896</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="ItemType" id="D70CE8262D64418CBC6106FBA1BFA8C1" action="edit">
+  <Relationships>
+   <Item type="Property" action="edit" where="source_id='D70CE8262D64418CBC6106FBA1BFA8C1' and name='classification'">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Classification</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>13568</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <stored_length>512</stored_length>
+    <track_history>0</track_history>
+    <name>classification</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='D70CE8262D64418CBC6106FBA1BFA8C1' and name='locked_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="User" type="ItemType" name="User">45E899CD2859442982EB22BB2DF683E5</data_source>
+    <data_type>item</data_type>
+    <is_hidden>1</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <label xml:lang="en">Lock</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>1</readonly>
+    <sort_order>10</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>locked_by_id</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='D70CE8262D64418CBC6106FBA1BFA8C1' and name='modified_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="User" type="ItemType" name="User">45E899CD2859442982EB22BB2DF683E5</data_source>
+    <data_type>item</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <label xml:lang="en">Changed By</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>1</readonly>
+    <sort_order>17664</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>modified_by_id</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='D70CE8262D64418CBC6106FBA1BFA8C1' and name='modified_on'">
+    <column_alignment>left</column_alignment>
+    <data_type>date</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Changed On</label>
+    <pattern>short_date_time</pattern>
+    <range_inclusive>0</range_inclusive>
+    <readonly>1</readonly>
+    <sort_order>17536</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>modified_on</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='D70CE8262D64418CBC6106FBA1BFA8C1' and name='owned_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="Identity" type="ItemType" name="Identity">E582AB17663F4EF28460015B2BE9E094</data_source>
+    <data_type>item</data_type>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>1</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="UserStory" type="ItemType" name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+    <track_history>0</track_history>
+    <name>owned_by_id</name>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,90 @@
+﻿<AML>
+ <Item type="Grid" id="BC12F29541B04541B0F88074AA04AA22" action="add">
+  <merge_path>Relationships</merge_path>
+  <query><![CDATA[<Item type="UserStoryTask" action="get" select="sort_order,item_number,name">
+   <source_id>{id}</source_id>
+   <Relationships>
+	  <Item type="UserTaskStep" action="get" select="sort_order,item_number,step,macro_string">
+		 <Relationships>
+			<Item type="UserStepResult" action="get" select="sort_order,result,macro_string"/>
+		 </Relationships>
+	   </Item>
+   </Relationships>
+ </Item>]]></query>
+  <name>UserStoryTasks</name>
+  <Relationships>
+   <Item type="Grid Column" id="9E2BE35A944E4326971C53276822C0D1" action="add">
+    <align>center</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">T</label>
+    <property>item_number</property>
+    <sort_order>100</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>0</starts_nested_row>
+    <visible>1</visible>
+    <width>40</width>
+    <xpath>self::Item[@type="UserStoryTask"]</xpath>
+   </Item>
+   <Item type="Grid Column" id="49782BBF451644408EBD05CD80B1AD68" action="add">
+    <align>left</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">Task</label>
+    <property>name</property>
+    <sort_order>200</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>0</starts_nested_row>
+    <visible>1</visible>
+    <width>100</width>
+    <xpath>self::Item[@type="UserStoryTask"]</xpath>
+   </Item>
+   <Item type="Grid Column" id="1D3F77793AB540FEA8CCC27932A4DCAF" action="add">
+    <align>right</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">S#</label>
+    <property>item_number</property>
+    <sort_order>300</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>1</starts_nested_row>
+    <visible>1</visible>
+    <width>40</width>
+    <xpath>Relationships/Item[@type="UserTaskStep"]</xpath>
+   </Item>
+   <Item type="Grid Column" id="6B09795A306844EA885D9C8D70990FBD" action="add">
+    <align>left</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">Step</label>
+    <property>step</property>
+    <sort_order>400</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>0</starts_nested_row>
+    <visible>1</visible>
+    <width>300</width>
+    <xpath>.</xpath>
+   </Item>
+   <Item type="Grid Column" id="2F72C0607178430DAFDB010C04269CF1" action="add">
+    <align>left</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">R</label>
+    <property>sort_order</property>
+    <sort_order>500</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>1</starts_nested_row>
+    <visible>0</visible>
+    <width>40</width>
+    <xpath>Relationships/Item[@type="UserStepResult"]</xpath>
+   </Item>
+   <Item type="Grid Column" id="2187DCB35E2645D88E606AC838DFD94A" action="add">
+    <align>left</align>
+    <datatype>default</datatype>
+    <label xml:lang="en">Result</label>
+    <property>result</property>
+    <sort_order>600</sort_order>
+    <source_id keyed_name="UserStoryTasks" type="Grid">BC12F29541B04541B0F88074AA04AA22</source_id>
+    <starts_nested_row>0</starts_nested_row>
+    <visible>1</visible>
+    <width>300</width>
+    <xpath>.</xpath>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,20 @@
+UserStory Package
+	
+Release Notes
+
+v11SP9   03/24/2017 Tested in SP9, first public release.
+
+The UserStory package enables Scrum teams to write and manage User Stories in Innovator during an Agile Implementation. Drink our own champagne! 
+
+	
+Known issues
+	Please enter issues in GitHub
+
+Deployment Guide
+	1. Copy the contents of the Innovator folder to the destination instance of Innovator.
+	2. Import the package using ImportExport Utility tool
+	3. See the UserSTory-UserGuide.pdf for User Tasks and Steps
+
+
+
+

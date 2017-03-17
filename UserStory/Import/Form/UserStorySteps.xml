@@ -1,0 +1,41 @@
+﻿<AML>
+ <Item type="Form" id="0ACD9A7290BA42E8A52EE5187289EEB1" action="add">
+  <category_form>0</category_form>
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>UserStorySteps</name>
+  <Relationships>
+   <Item type="Body" id="36E22277D90F450F919C7FA82A9C3ABA" action="add">
+    <bg_attach>scroll</bg_attach>
+    <bg_color>#FFFFFF</bg_color>
+    <bg_image>../images/Backgrounds/wvleft.gif</bg_image>
+    <bg_repeat>no-repeat</bg_repeat>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStorySteps" type="Form">0ACD9A7290BA42E8A52EE5187289EEB1</source_id>
+    <Relationships>
+     <Item type="Field" id="DBFC1622B2154E5B94FC742EB6B7F40B" action="add">
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = top.aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.attachEvent('onload', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="36E22277D90F450F919C7FA82A9C3ABA" type="Body">36E22277D90F450F919C7FA82A9C3ABA</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>item_info</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

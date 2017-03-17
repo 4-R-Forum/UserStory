@@ -1,0 +1,45 @@
+﻿<AML>
+ <Item type="Permission" id="14C2949B47F84E80B45178109EBA46F4" action="add">
+  <is_private>0</is_private>
+  <name>UserStory</name>
+  <Relationships>
+   <Item type="Access" id="9AF803DA7C6B4D25A3BC8DAD28183DA3" action="add">
+    <can_change_access>0</can_change_access>
+    <can_delete>0</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>0</can_update>
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <show_permissions_warning>0</show_permissions_warning>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="UserStory" type="Permission">14C2949B47F84E80B45178109EBA46F4</source_id>
+   </Item>
+   <Item type="Access" id="9F53606D4677439CBEBDD819D888F4A9" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="UserStory" type="Permission">14C2949B47F84E80B45178109EBA46F4</source_id>
+   </Item>
+   <Item type="Access" id="FB193E12283044198EA58456AA0163D2" action="add">
+    <can_change_access>1</can_change_access>
+    <can_delete>1</can_delete>
+    <can_discover>1</can_discover>
+    <can_get>1</can_get>
+    <can_update>1</can_update>
+    <related_id keyed_name="User Story Admins" type="Identity">C170DB26E81649A598823892845A3268</related_id>
+    <show_permissions_warning>1</show_permissions_warning>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="UserStory" type="Permission">14C2949B47F84E80B45178109EBA46F4</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

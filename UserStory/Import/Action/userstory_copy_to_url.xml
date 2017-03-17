@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="EBB479E91FB142B083B05CEAB078DD5D" action="add">
+  <item_query />
+  <label xml:lang="en">Copy to URL</label>
+  <location>client</location>
+  <method keyed_name="userstory_copy_to_url" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>userstory_copy_to_url</name>
+   </Item>
+  </method>
+  <target>none</target>
+  <type>itemtype</type>
+  <name>userstory_copy_to_url</name>
+ </Item>
+</AML>

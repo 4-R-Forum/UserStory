@@ -1,0 +1,12 @@
+﻿<AML>
+ <Item type="Method" id="CFFA5E6FB529412BB8F3D8BA4CEAEA7D" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var url=document.thisItem.getProperty("video_url","");
+if (url !=="")
+{ window.open(url);}
+else
+{top.aras.AlertError("Video not available yet");}]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>userstory_play_video</name>
+ </Item>
+</AML>

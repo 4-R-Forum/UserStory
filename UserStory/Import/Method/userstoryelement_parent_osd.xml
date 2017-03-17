@@ -1,0 +1,27 @@
+﻿<AML>
+ <Item type="Method" id="4FE3E3F2208745F992527675CBD475B9" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[
+if (!inArgs.itemContext) {return;}
+var context_item=this.newItem();
+context_item.loadAML(inArgs.itemContext.xml);
+var source_id=context_item.getID();
+var qry1 = this.newItem("UserStoryElement");
+qry1.setProperty("source_id",source_id);
+var res= qry1.apply("get");
+if (res.isEmpty()) {return "";}
+if (res.isError()) {top.aras.AlertError(res.getErrorString());}
+var count=res.getItemCount();
+var idarray=new Array();
+for (i=0;i<count;i++){
+  var item=res.getItemByIndex(i);
+  idarray[i]=item.getID();
+  var idlist=idarray.join(",");
+}
+inArgs.QryItem.item.setAttribute("idlist",idlist);
+return("");
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>userstoryelement_parent_osd</name>
+ </Item>
+</AML>

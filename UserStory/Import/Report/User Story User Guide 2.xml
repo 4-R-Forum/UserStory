@@ -1,0 +1,307 @@
+﻿<AML>
+ <Item type="Report" id="F01F710AC2654F169F1D7F4229139E5C" action="add">
+  <label xml:lang="en">User Guide 2</label>
+  <location>client</location>
+  <report_query><![CDATA[<Item type="UserStory"  id="{@id}" action="user_guide_2" />
+ ]]></report_query>
+  <target>window</target>
+  <type>item</type>
+  <xsl_stylesheet><![CDATA[<xsl:stylesheet version="1.0" exclude-result-prefixes="msxsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <xsl:output method="xml" indent="yes"></xsl:output>
+  <xsl:template match="//Result/Item[@type='UserStory']">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head xmlns=""></head>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+        <title>Test Plan</title>
+        <style type="text/css">
+          /* a bit of housekeeping - ignore this bit */
+          body {
+          color: #000;
+          background: #ffffff;
+          font-family: Helvetica, Arial, sans-serif;
+          text-align: center;
+          }
+          #page {
+          width: 600px;
+          text-align: left;
+          margin: 0 auto;
+          padding: 2em;
+          background: #fff;
+          }
+          /* the table */
+          table {
+          width: 100%;
+          border: 1px solid #cc0033;
+          text-align: left;
+          border-collapse: collapse;
+          margin: 0 0 1em 0;
+          caption-side: top;
+          }
+          caption, td, th {
+          padding: 0.3em;
+          border: 1px solid #000;
+          }
+          th {
+          width: 25%;
+          }
+          caption {
+          color: #00000;
+          background: #ff0000;
+          }
+          .aras{
+          padding: 2em;
+          color: #ffffff;
+          font-weight:bold;
+          background: #cc0033;
+          }
+          h3,h4{
+          color: #cc0033
+          }
+          .logo{
+          position:relative; left:-200px;
+          }
+          .table_noborder{
+          width: 100%;
+          border: 0;
+          text-align: left;
+          border-collapse: collapse;
+          margin: 0 0 1em 0;
+          caption-side: top;
+          }
+          }
+        </style>
+      </head>
+      <body>
+        <span class="logo">
+          <img src="../../imagesLegacy/Logos/branding_03.jpg"></img>
+        </span>
+        <div id="page">
+          <h3>
+            <xsl:value-of select="name"></xsl:value-of>
+            - User Guide
+          </h3>
+          <div>
+            Date:            <xsl:value-of select="//Item[@type='Header']/date"></xsl:value-of>
+          </div>
+          <br></br>
+          <xsl:for-each select="//Item[@type='UserStory'][classification='Story'][test_plan_sort&gt;'0']">
+            <xsl:sort select="test_plan_sort" data-type="number"></xsl:sort>
+            <table summary="story">
+              <tr class="aras">
+                <th>
+                  <xsl:value-of select="item_number"></xsl:value-of>
+                  :                  <xsl:value-of select="name"></xsl:value-of>
+                  <xsl:text> - Test </xsl:text>
+                  <xsl:value-of select="test_plan_sort"></xsl:value-of>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <b>As a </b>
+                  <xsl:value-of select="as_a"></xsl:value-of>
+                  , <b> I want to </b>
+                  <xsl:value-of select="i_want_to"></xsl:value-of>
+                  <b> so that </b>
+                  <xsl:value-of select="so_that"></xsl:value-of>
+                  .
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <xsl:text>Concept: </xsl:text>
+                  <xsl:value-of select="implementation_outline"></xsl:value-of>
+                </td>
+              </tr>
+              <xsl:if test="acceptance_criteria">
+                <tr>
+                  <td>
+                    <xsl:text>Acceptance Criteria: </xsl:text>
+                    <xsl:value-of select="acceptance_criteria"></xsl:value-of>
+                  </td>
+                </tr>
+              </xsl:if>
+              <tr>
+                <td>
+                  <table summary="task">
+                    <xsl:for-each select="Relationships/Item[@type='UserStoryTask']">
+                      <xsl:sort select="sort_order" data-type="number"></xsl:sort>
+                      <tr>
+                        <td width="10%">
+                          <b>
+                            <xsl:value-of select="item_number"></xsl:value-of>
+                          </b>
+                        </td>
+                        <td>
+                          <b>
+                            <xsl:value-of select="name"></xsl:value-of>
+                          </b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <table summary="step">
+                            <xsl:for-each select="Relationships/Item[@type='UserTaskStep']">
+                              <xsl:sort select="item_number" data-type="number"></xsl:sort>
+                              <tr>
+                                <td width="6%">
+                                  <center>
+                                    <xsl:value-of select="item_number"></xsl:value-of>
+                                  </center>
+                                </td>
+                                <td width="47%">
+                                  <xsl:value-of select="step"></xsl:value-of>
+                                </td>
+                                <td width="47%">
+                                  <xsl:choose>
+                                    <xsl:when test="Relationships/Item[@type='UserStepResult']">
+                                      <ul>
+                                        <xsl:for-each select="Relationships/Item[@type='UserStepResult']">
+                                          <xsl:sort select="sort_order" data-type="number"></xsl:sort>
+                                          <li>
+                                            <xsl:value-of select="result"></xsl:value-of>
+                                          </li>
+                                        </xsl:for-each>
+                                      </ul>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <xsl:text> </xsl:text>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </td>
+                              </tr>
+                            </xsl:for-each>
+                          </table>
+                        </td>
+                      </tr>
+                    </xsl:for-each>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p></p>
+          </xsl:for-each>
+        </div>
+        <!-- // #page -->
+      </body>
+      <style type="text/css" userData="Global" xmlns="">
+        .cellSolid {
+        border-top:1px #000000 solid;
+        border-right:1px #000000 solid;
+        border-bottom:1px #000000 solid;
+        border-left:1px #000000 solid;
+        }
+        .cellSolidTopRight {
+        border-top:1px #000000 solid;
+        border-right:1px #000000 solid;
+        }
+        .cellSolidTopLeft {
+        border-top:1px #000000 solid;
+        border-left:1px #000000 solid;
+        }
+        .cellSolidRightBottom {
+        border-right:1px #000000 solid;
+        border-bottom:1px #000000 solid;
+        }
+        .cellSolidBottomLeft {
+        border-bottom:1px #000000 solid;
+        border-left:1px #000000 solid;
+        }
+        .cellSolidTop {
+        border-top:1px #000000 solid;
+        }
+        .cellSolidRight {
+        border-right:1px #000000 solid;
+        }
+        .cellSolidBottom {
+        border-bottom:1px #000000 solid;
+        }
+        .cellSolidLeft {
+        border-left:1px #000000 solid;
+        }
+        .cellDashed {
+        border-top:1px #666666 dashed;
+        border-right:1px #666666 dashed;
+        border-bottom:1px #666666 dashed;
+        border-left:1px #666666 dashed;
+        }
+        .cellDashedTopRight {
+        border-top:1px #666666 dashed;
+        border-right:1px #666666 dashed;
+        }
+        .cellDashedTopLeft {
+        border-top:1px #666666 dashed;
+        border-left:1px #666666 dashed;
+        }
+        .cellDashedBottomRight {
+        border-bottom:1px #666666 dashed;
+        border-right:1px #666666 dashed;
+        }
+        .cellDashedBottomLeft {
+        border-bottom:1px #666666 dashed;
+        border-left:1px #666666 dashed;
+        }
+        .cellDashedTop {
+        border-top:1px #666666 dashed;
+        }
+        .cellDashedRight {
+        border-right:1px #666666 dashed;
+        }
+        .cellDashedBottom {
+        border-bottom:1px #666666 dashed;
+        }
+        .cellDashedLeft {
+        border-left:1px #666666 dashed;
+        }
+        .cellHeader {
+        background-color:#CCCCCC;
+        border-top:1px #000000 solid;
+        border-right:1px #000000 solid;
+        border-bottom:1px #000000 solid;
+        padding:2px;
+        text-align:center;
+        text-transform:capitalize;
+        text-align:center;
+        font-family:helvetica;
+        font-weight:bold;
+        font-size:8pt;
+        }
+        .cellHeaderVertBT {
+        background-color:#CCCCCC;
+        border-top:1px #000000 solid;
+        border-right:1px #000000 solid;
+        border-bottom:1px #000000 solid;
+        border-left:1px #000000 solid;
+        padding:2px;
+        writing-mode:tb-rl;filter: flipv fliph;
+        text-align:center;
+        text-transform:capitalize;
+        text-align:center;
+        font-family:helvetica;
+        font-weight:bold;
+        font-size:8pt;
+        }
+        .cellHeaderVertTB {
+        background-color:#CCCCCC;
+        border-top:1px #000000 solid;
+        border-right:1px #000000 solid;
+        border-bottom:1px #000000 solid;
+        border-left:1px #000000 solid;
+        padding:2px;
+        writing-mode:tb-rl;filter: flipv flipv;
+        text-align:center;
+        text-transform:capitalize;
+        text-align:center;
+        font-family:helvetica;
+        font-weight:bold;
+        font-size:8pt;
+        }
+      </style>
+    </html>
+  </xsl:template>
+  <xsl:template match="date"/>
+</xsl:stylesheet>
+]]></xsl_stylesheet>
+  <name>User Story User Guide 2</name>
+ </Item>
+</AML>

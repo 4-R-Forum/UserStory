@@ -1,0 +1,35 @@
+﻿<AML>
+ <Item type="Method" id="E89C3E9C48EB46B39F2EE2BECCDBEF47" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Innovator innov=this.getInnovator();
+
+// Item q = this.newItem("Desktop", "GetDesktopItemsForCurrentUser");
+// Item r = q.apply();
+// Item DesktopItems = r.getItemsByXPath("//Item[@type='Desktop']");
+// return DesktopItems;
+
+string qry1=@"
+<AML>
+<Item type='UserStory' action='get' select='x_pos,y_pos,quarters_img'>
+ <userstory_state>In Work</userstory_state>
+</Item>
+</AML>
+";
+Item res1 =innov.applyAML(qry1);
+for (int i=0;i<res1.getItemCount();i++)
+{
+ Item this_item=res1.getItemByIndex(i);
+ this_item.setProperty("source_id",this_item.getID());
+ this_item.setProperty("x_pos",this_item.getProperty("x_pos","0"));
+ this_item.setProperty("y_pos",this_item.getProperty("y_pos","0"));
+ this_item.setProperty("source_type","D70CE8262D64418CBC6106FBA1BFA8C1");
+ //this_item.setType("Desktop");
+}
+return res1;
+
+
+]]></method_code>
+  <method_type>C#</method_type>
+  <name>testScrumBoard</name>
+ </Item>
+</AML>

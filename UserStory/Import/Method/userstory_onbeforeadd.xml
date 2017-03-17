@@ -1,0 +1,30 @@
+﻿<AML>
+ <Item type="Method" id="F4FD41AFA1D14006AD8E7A90774B6D77" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[string qry1=@"
+<AML>
+<Item type='PackageDefinition' action='get'>
+  <Relationships>
+    <Item type='PackageGroup' action='get'>
+      <Relationships>
+        <Item type='PackageElement' action='get' >
+          <element_type>{0}</element_type>
+          <name>{1}</name>
+        </Item>
+      </Relationships>
+    </Item>
+  </Relationships>
+</Item>
+</AML> 
+";
+qry1=string.Format(qry1,this.getProperty("packagegroup",""),this.getProperty("element_name",""));
+Item res=this.getInnovator().applyAML(qry1);
+if (!res.isError()&&!res.isEmpty()&&!res.isCollection())
+{
+   this.setProperty("packagedefinition",res.getID());
+}
+return this;]]></method_code>
+  <method_type>C#</method_type>
+  <name>userstory_onbeforeadd</name>
+ </Item>
+</AML>

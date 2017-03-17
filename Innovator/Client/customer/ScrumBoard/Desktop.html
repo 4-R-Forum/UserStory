@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<!-- (c) Copyright by Aras Corporation, 2004-2013. -->
+<html>
+<head>
+	<style type="text/css">
+		body{
+			overflow:hidden; 
+			height: 100%;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		iframe{
+			border: 0px;
+		}
+		#WSarea_div{
+			position: absolute;
+			top: 25px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+		}
+	</style>
+	<script type="text/javascript">
+	var DesktopItems = null;
+	function loadDesktopItems() {
+		var q = parent.parent.aras.newIOMItem("Method", "getScrumBoardItems");
+		var select_stories=document.getElementById('select_stories').value;
+		q.setProperty("select_stories",select_stories);
+		var r = q.apply();
+		DesktopItems = r.dom.selectNodes('//Item');
+	}
+
+	function refreshTitle() {
+		frames.WStitle.location.reload();
+	}
+	function select_change() {
+		loadDesktopItems();
+		frames.WSarea.location  = "Desktop-Area.html";
+	}
+
+	onload = function onload_handler() {
+		loadDesktopItems();
+
+		frames.WSarea.location  = "Desktop-Area.html";
+		frames.WStitle.location = "Desktop-Title.html";
+	}
+	</script>
+</head>
+<body>
+			  <b>Select Stories</b><select onchange="select_change()" id="select_stories">
+			   <option selected value="In Work" >In Work</option>
+			   <option value="New">New</>
+			  </select>
+	<iframe id="WStitle" src="../blank.html" name="WStitle" height="25px" width="100%" scrolling="no"></iframe>
+	<div id="WSarea_div">
+		<iframe id="WSarea" src="../blank.html" name="WSarea" height="100%" width="100%" scrolling="no"></iframe>
+	</div>
+</body>
+</html>

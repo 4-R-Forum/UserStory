@@ -1,0 +1,149 @@
+﻿<AML>
+ <Item type="Form" id="9249970D01014D9BABDD737F6EABF288" action="add">
+  <category_form>0</category_form>
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>UserStoryIssue</name>
+  <Relationships>
+   <Item type="Body" id="429D04AA65D54FF48112BFB340B84385" action="add">
+    <bg_attach>scroll</bg_attach>
+    <bg_color>#FFFFFF</bg_color>
+    <bg_image>../images/Backgrounds/wvleft.gif</bg_image>
+    <bg_repeat>no-repeat</bg_repeat>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStoryIssue" type="Form">9249970D01014D9BABDD737F6EABF288</source_id>
+    <Relationships>
+     <Item type="Field" id="3E5B3ED9023E4FDFB7F481F663137164" action="add">
+      <bg_color>beige  </bg_color>
+      <border_width>0</border_width>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">created_by_id</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_index>640</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>537</x>
+      <y>16</y>
+      <name>created_by_id</name>
+     </Item>
+     <Item type="Field" id="CFAB5F729DFE49B2BFA49D9E6C3445EC" action="add">
+      <border_width>0</border_width>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">description</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="description" type="Property">27110E2FE1F843F1A1302563E7AE0C93</propertytype_id>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_index>3712</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>120</textarea_cols>
+      <textarea_rows>12</textarea_rows>
+      <x>198</x>
+      <y>66</y>
+      <name>description</name>
+     </Item>
+     <Item type="Field" id="C706A0F595B24362B6C53D2E5DF74081" action="add">
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = top.aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.attachEvent('onload', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>item_info</name>
+     </Item>
+     <Item type="Field" id="B64EED6606934691ABEDB76F5C194D7C" action="add">
+      <border_width>0</border_width>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">modified_by_id</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>640</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_index>5120</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>673</x>
+      <y>18</y>
+      <name>modified_by_id</name>
+     </Item>
+     <Item type="Field" id="C3BCE1223746462C938E618C103F2FF1" action="add">
+      <border_width>0</border_width>
+      <display_length>60</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">name</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="name" type="Property">9797CBE4597247C7B69FC039772E5FBC</propertytype_id>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_index>3584</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>200</x>
+      <y>14</y>
+      <name>name</name>
+     </Item>
+     <Item type="Field" id="A3C0E436541440758B3A3A8115E11031" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Image</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="quarters_img" type="Property">BCA9DB4D6A1A42D0A57C691D8F2C26D1</propertytype_id>
+      <sort_order>768</sort_order>
+      <source_id keyed_name="429D04AA65D54FF48112BFB340B84385" type="Body">429D04AA65D54FF48112BFB340B84385</source_id>
+      <tab_index>7808</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>23</x>
+      <y>14</y>
+      <name>quarters_img</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

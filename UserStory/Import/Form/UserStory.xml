@@ -1,0 +1,861 @@
+﻿<AML>
+ <Item type="Form" id="17620658777D41B8AB59991C8A332A8B" action="add">
+  <category_form>0</category_form>
+  <height>450</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>900</width>
+  <name>UserStory</name>
+  <Relationships>
+   <Item type="Body" id="30C1124C351947BA9CBADCFE8508352E" action="add">
+    <bg_attach>scroll</bg_attach>
+    <bg_color>#FFFFFF</bg_color>
+    <bg_image>../images/Backgrounds/wvleft.gif</bg_image>
+    <bg_repeat>no-repeat</bg_repeat>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="Form">17620658777D41B8AB59991C8A332A8B</source_id>
+    <Relationships>
+     <Item type="Field" id="14A185E994164D4DA08B936298A95F38" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Acceptance Criteria</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="acceptance_criteria" type="Property">8A25B15A564D4B03AA35B5E96ABF91F1</propertytype_id>
+      <sort_order>3328</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>19968</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>400</textarea_cols>
+      <textarea_rows>50</textarea_rows>
+      <x>210</x>
+      <y>158</y>
+      <name>acceptance_criteria</name>
+     </Item>
+     <Item type="Field" id="97AD5340ACB34CAA9CAEACB82F69F01B" action="add">
+      <border_width>0</border_width>
+      <display_length>400</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">As A</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="as_a" type="Property">F781F9E586AC4878BD3F7F6C8CDBB40E</propertytype_id>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>3072</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>185</x>
+      <y>45</y>
+      <name>as_a</name>
+     </Item>
+     <Item type="Field" id="1C9037014ACA49E6ADE735F46F018415" action="add">
+      <border_width>0</border_width>
+      <display_length>75</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Assigned To</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="assigned_to" type="Property">02584FB828A24ABE91BE217EB16B9152</propertytype_id>
+      <sort_order>1024</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>6784</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>335</y>
+      <name>assigned_to</name>
+     </Item>
+     <Item type="Field" id="AA9AA78AFA5E46C89432CC370070931F" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>button</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Play Video</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>3584</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>625</x>
+      <y>350</y>
+      <name>buttonVideo</name>
+      <Relationships>
+       <Item type="Field Event" id="50CD80C060E14641AE9DFEBF8073E9F9" action="add">
+        <field_event>onclick</field_event>
+        <related_id keyed_name="userstory_play_video" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>userstory_play_video</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="buttonVideo" type="Field">AA9AA78AFA5E46C89432CC370070931F</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="55064E5722E641B5AF8B2DDEDB0B77DC" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>class structure</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Classification</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>2816</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>13568</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>70</y>
+      <name>classification</name>
+     </Item>
+     <Item type="Field" id="F8AA663831CA45CA96CBEE84896F5587" action="add">
+      <border_width>0</border_width>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<script>
+//debugger;
+top.aras.uiAddConfigLink2Doc4Assembly(document, "clientUpgrade");
+</script>
+<object
+  style="display:none"
+   id="clientUpgrade"
+  classid="../cbin/clientUpgrade.dll#Utils.ClientUpgrade" >
+</object>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>1408</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>29</x>
+      <y>164</y>
+      <name>clientUpgrade</name>
+     </Item>
+     <Item type="Field" id="0A8FEFFD2371439A8978BA2EEFE5060A" action="add">
+      <border_width>0</border_width>
+      <display_length>325</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>file item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Concept Diagram</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="concept_diagram" type="Property">06D94FFF87564ACF99068B3A9F93375B</propertytype_id>
+      <sort_order>3200</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>19712</tab_index>
+      <tab_stop>1</tab_stop>
+      <text_align>left</text_align>
+      <x>210</x>
+      <y>300</y>
+      <name>concept_diagram</name>
+     </Item>
+     <Item type="Field" id="D81A077186EA4F72B71688CE3F569026" action="add">
+      <border_width>0</border_width>
+      <display_length>75</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>date</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Date Completed</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="date_completed" type="Property">CAABA882B08B4814B117F3C2EC76F3E7</propertytype_id>
+      <sort_order>2048</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10368</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>300</y>
+      <name>date_completed</name>
+     </Item>
+     <Item type="Field" id="56085BC5BD9C49C3B6778866E0DCAB34" action="add">
+      <border_width>0</border_width>
+      <display_length>75</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>date</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Date Started</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="date_started" type="Property">4DDC266AA56D4CCBB22CE7201CBCFC37</propertytype_id>
+      <sort_order>1920</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10240</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>265</y>
+      <name>date_started</name>
+     </Item>
+     <Item type="Field" id="E49F073338994C25B98B3A07A008CEA7" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">description</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="description" type="Property">9DEE03886277408D81DA00B7ED9F2C7E</propertytype_id>
+      <sort_order>4992</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>20480</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>600</textarea_cols>
+      <textarea_rows>100</textarea_rows>
+      <x>212</x>
+      <y>383</y>
+      <name>description</name>
+     </Item>
+     <Item type="Field" id="3E2C47FADDB24725B897D3ACF25B9698" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">I Want To</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="i_want_to" type="Property">31123F1A3F8D468B86A212ECB8F7423A</propertytype_id>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>3200</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>400</textarea_cols>
+      <textarea_rows>30</textarea_rows>
+      <x>160</x>
+      <y>70</y>
+      <name>i_want_to</name>
+     </Item>
+     <Item type="Field" id="057D93D37B834E408480F7C8CFB99FB7" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Concept</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="implementation_outline" type="Property">8154D97165CC46168A23A5D4E47B0497</propertytype_id>
+      <sort_order>3072</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>19584</tab_index>
+      <tab_stop>1</tab_stop>
+      <text_align>left</text_align>
+      <textarea_cols>400</textarea_cols>
+      <textarea_rows>50</textarea_rows>
+      <x>210</x>
+      <y>230</y>
+      <name>implementation_outline</name>
+     </Item>
+     <Item type="Field" id="97E0C5E6BE3E4053A07E4679F5A879EA" action="add">
+      <field_type>html</field_type>
+      <html_code><![CDATA[<span id='ITEM_INFO_INTERNAL_SPAN'/>
+<!--
+<script>
+  populate_ITEM_INFO_INTERNAL_SPAN = function()
+  {
+    document.getElementById('ITEM_INFO_INTERNAL_SPAN').innerHTML = top.aras.uiGetItemInfoTable(document.itemType);
+  }
+  window.attachEvent('onload', populate_ITEM_INFO_INTERNAL_SPAN);
+</script>
+-->]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>0</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>item_info</name>
+     </Item>
+     <Item type="Field" id="072AB67E89454D8696F425A4CD4BFA8A" action="add">
+      <border_width>0</border_width>
+      <display_length>12</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Number</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="item_number" type="Property">16B07635520C432B90B1ED6ADA25D99E</propertytype_id>
+      <sort_order>1664</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>64</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>150</x>
+      <y>10</y>
+      <name>item_number</name>
+     </Item>
+     <Item type="Field" id="93A4C56950E14C1E95BFB6933874B912" action="add">
+      <border_width>1</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<div style="width:200px;height:155px;"></div>]]></html_code>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <legend xml:lang="en">Backlog</legend>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>4096</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>667</x>
+      <y>0</y>
+      <z_index>-1</z_index>
+      <name>labelBacklog</name>
+     </Item>
+     <Item type="Field" id="7848E94B7955400094273C97F6B40D1D" action="add">
+      <border_width>1</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<div style="width:100px;height:230px;"></div>]]></html_code>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <legend xml:lang="en">Planning</legend>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>3968</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>6</x>
+      <y>170</y>
+      <z_index>-1</z_index>
+      <name>labelPlanning</name>
+     </Item>
+     <Item type="Field" id="50102348535A4E92B43964A656F3BB15" action="add">
+      <border_width>1</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<div style="width:200px;height:100px;"></div>]]></html_code>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <legend xml:lang="en">Test</legend>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>4224</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>665</x>
+      <y>170</y>
+      <z_index>-1</z_index>
+      <name>labelTest</name>
+     </Item>
+     <Item type="Field" id="672FB32588654E42A1857D337822B693" action="add">
+      <border_width>1</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<div style="width:470px;height:110px;background-color:#eee;"></div>]]></html_code>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <legend xml:lang="en">User Story</legend>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>4352</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_stop>1</tab_stop>
+      <x>146</x>
+      <y>30</y>
+      <z_index>-1</z_index>
+      <name>labelUserStory</name>
+     </Item>
+     <Item type="Field" id="4A5C25916C6F4A8F91CF7B6CCEBBF373" action="add">
+      <border_width>0</border_width>
+      <display_length>300</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">name</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="name" type="Property">CFADA423D2D34F3892A15E94B66B9F2D</propertytype_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>128</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>280</x>
+      <y>10</y>
+      <name>name</name>
+     </Item>
+     <Item type="Field" id="C2B08135109241C1930C9161A9FAFEB9" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Owned By</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>5120</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>768</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>669</x>
+      <y>227</y>
+      <name>owned_by_id</name>
+     </Item>
+     <Item type="Field" id="337FCBC0E8394C93B551D363EF922B4C" action="add">
+      <border_width>0</border_width>
+      <display_length>50</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">points</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="points" type="Property">973218093A6943DAAB3FB89F4D9F7F21</propertytype_id>
+      <sort_order>768</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>3456</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>671</x>
+      <y>14</y>
+      <name>points</name>
+     </Item>
+     <Item type="Field" id="4CBDE608DA174C8FAB90DF6257AF93EF" action="add">
+      <border_width>0</border_width>
+      <display_length>50</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">priority</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="priority" type="Property">E73E84DC034A43C88FEB633DA7787E24</propertytype_id>
+      <sort_order>1152</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>6912</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>731</x>
+      <y>14</y>
+      <name>priority</name>
+     </Item>
+     <Item type="Field" id="57EE5DCF40E6459CB3875D1006DA617F" action="add">
+      <border_width>0</border_width>
+      <display_length>50</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Quarters</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="quarters" type="Property">437FE81311DB474C90465BE1D676B514</propertytype_id>
+      <sort_order>2176</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10496</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>670</x>
+      <y>50</y>
+      <name>quarters</name>
+      <Relationships>
+       <Item type="Field Event" id="FD790452295C41F2BECE51A0E457EDA6" action="add">
+        <field_event>onblur</field_event>
+        <related_id keyed_name="userstory_quarters_change" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>userstory_quarters_change</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="quarters" type="Field">57EE5DCF40E6459CB3875D1006DA617F</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="9A995A1F9AB94E40B434390245DA3E89" action="add">
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="quarters_img" type="Property">5963BF08318D4DA2A32C7DDDF94D54D4</propertytype_id>
+      <sort_order>2304</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10624</tab_index>
+      <tab_stop>1</tab_stop>
+      <text_align>right</text_align>
+      <x>737</x>
+      <y>55</y>
+      <name>quarters_img</name>
+     </Item>
+     <Item type="Field" id="AB0225FF3A7F4DDA9A46981DE3A9CCB1" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Rated By</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="rated_by_id" type="Property">5D1FEED34C964C64B9189D4340888ED1</propertytype_id>
+      <sort_order>5248</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>20608</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>668</x>
+      <y>123</y>
+      <name>rated_by_id</name>
+     </Item>
+     <Item type="Field" id="5B26C2E7BF4546E2838624B5D520F9EA" action="add">
+      <border_width>0</border_width>
+      <display_length>50</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">PO Rating</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="rating" type="Property">ACB25ED9F76F4D41B44F963F3D1C4C5E</propertytype_id>
+      <sort_order>2432</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10752</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>671</x>
+      <y>85</y>
+      <name>rating</name>
+      <Relationships>
+       <Item type="Field Event" id="FAAA73431E7F4BCF93BF52F3FA2FC9A7" action="add">
+        <field_event>onchange</field_event>
+        <related_id keyed_name="userstory_rating_change" type="Method">
+         <Item type="Method" action="get" select="id">
+          <name>userstory_rating_change</name>
+         </Item>
+        </related_id>
+        <sort_order>128</sort_order>
+        <source_id keyed_name="rating" type="Field">5B26C2E7BF4546E2838624B5D520F9EA</source_id>
+       </Item>
+      </Relationships>
+     </Item>
+     <Item type="Field" id="44AF3B88AFFC4621A1E6B28605BE8933" action="add">
+      <border_width>0</border_width>
+      <field_type>image</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="rating_img" type="Property">18AB72F48CEE47EABF1D4F83E7DC2D29</propertytype_id>
+      <sort_order>2560</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10880</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>737</x>
+      <y>90</y>
+      <name>rating_img</name>
+     </Item>
+     <Item type="Field" id="6B74267F90F94934A0B6B921A7D4830D" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>textarea</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">so that</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="so_that" type="Property">0F39EEAD55C242C5BB26EF32383FCF3A</propertytype_id>
+      <sort_order>640</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>3328</tab_index>
+      <tab_stop>1</tab_stop>
+      <textarea_cols>400</textarea_cols>
+      <textarea_rows>30</textarea_rows>
+      <x>168</x>
+      <y>108</y>
+      <name>so_that</name>
+     </Item>
+     <Item type="Field" id="757F84187F664FC2A0BF1D599D54157E" action="add">
+      <border_width>0</border_width>
+      <display_length>100</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">test plan reference</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="test_plan_reference" type="Property">26EA25FC3E2F483ABDDA6D49AE0C2A64</propertytype_id>
+      <sort_order>2944</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>16512</tab_index>
+      <tab_stop>1</tab_stop>
+      <text_align>left</text_align>
+      <x>730</x>
+      <y>190</y>
+      <name>test_plan_reference</name>
+     </Item>
+     <Item type="Field" id="221AD89F189549219B2A0DBD88558081" action="add">
+      <border_width>0</border_width>
+      <display_length>50</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Order</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="test_plan_sort" type="Property">75D50868802540BAB0F51B95D291B90D</propertytype_id>
+      <sort_order>2688</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>10624</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>670</x>
+      <y>190</y>
+      <name>test_plan_sort</name>
+     </Item>
+     <Item type="Field" id="CBBE2C414E1145298F53C31B33E59C12" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Sprint</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="userstory_sprint" type="Property">77A8743559F94AEEAB44EECEC0691552</propertytype_id>
+      <sort_order>4480</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>20096</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>13</x>
+      <y>225</y>
+      <name>userstory_sprint</name>
+     </Item>
+     <Item type="Field" id="C0C90305DB1641BCB580FE8FD04F27C1" action="add">
+      <border_width>0</border_width>
+      <display_length>75</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">State</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="userstory_state" type="Property">0D5BAFF13EF749FABD9E038C25EF8FAD</propertytype_id>
+      <sort_order>1280</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>7040</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>370</y>
+      <name>userstory_state</name>
+     </Item>
+     <Item type="Field" id="08B35E4D1B9E4BDE89B5CC7B68CD9701" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>dropdown</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Team</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="userstory_team" type="Property">04B173FC4D0F43F48740CD870395B363</propertytype_id>
+      <sort_order>4608</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>20224</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>12</x>
+      <y>184</y>
+      <name>userstory_team</name>
+     </Item>
+     <Item type="Field" id="FB45ACDC88B94491B304CDE12F0BA55C" action="add">
+      <border_width>0</border_width>
+      <display_length>400</display_length>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>tahoma, arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Video URL</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="video_url" type="Property">8AE0C2B524E943418593E90F4D21CAA2</propertytype_id>
+      <sort_order>3456</sort_order>
+      <source_id keyed_name="30C1124C351947BA9CBADCFE8508352E" type="Body">30C1124C351947BA9CBADCFE8508352E</source_id>
+      <tab_index>19840</tab_index>
+      <tab_stop>1</tab_stop>
+      <text_align>left</text_align>
+      <textarea_cols>400</textarea_cols>
+      <textarea_rows>20</textarea_rows>
+      <x>210</x>
+      <y>335</y>
+      <name>video_url</name>
+     </Item>
+    </Relationships>
+   </Item>
+   <Item type="Form Event" id="FCFE0EFF08744BCDA1F9CD66FCB917CF" action="add">
+    <form_event>onload</form_event>
+    <related_id keyed_name="userstory_hide_show_tabs" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>userstory_hide_show_tabs</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="UserStory" type="Form">17620658777D41B8AB59991C8A332A8B</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="Field" id="55064E5722E641B5AF8B2DDEDB0B77DC" action="edit">
+  <!-- Please note: this AML depends on the "UserStory" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>classification</name>
+    <source_id type="ItemType" keyed_name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="C2B08135109241C1930C9161A9FAFEB9" action="edit">
+  <!-- Please note: this AML depends on the "UserStory" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>owned_by_id</name>
+    <source_id type="ItemType" keyed_name="UserStory">D70CE8262D64418CBC6106FBA1BFA8C1</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+</AML>

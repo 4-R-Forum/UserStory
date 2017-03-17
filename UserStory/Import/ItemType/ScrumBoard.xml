@@ -1,0 +1,56 @@
+﻿<AML>
+ <Item type="ItemType" id="833C6B8E853D45E780D2FDA155880FD9" action="add">
+  <allow_private_permission>1</allow_private_permission>
+  <auto_search>0</auto_search>
+  <enforce_discovery>1</enforce_discovery>
+  <hide_where_used>0</hide_where_used>
+  <implementation_type>table</implementation_type>
+  <instance_data>SCRUMBOARD</instance_data>
+  <is_dependent>0</is_dependent>
+  <is_relationship>0</is_relationship>
+  <is_versionable>0</is_versionable>
+  <label xml:lang="en">ScrumBoard</label>
+  <label_plural xml:lang="en">ScrumBoard</label_plural>
+  <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+  <show_parameters_tab>1</show_parameters_tab>
+  <structure_view>tabs off</structure_view>
+  <unlock_on_logout>0</unlock_on_logout>
+  <use_src_access>0</use_src_access>
+  <name>ScrumBoard</name>
+  <Relationships>
+   <Item type="View" id="4334CA699F2E4AB29585C8647647F208" action="add">
+    <client>js</client>
+    <related_id keyed_name="ScrumBoard" type="Form">654E2608F6354F43A478F9386A51D46C</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="ScrumBoard" type="ItemType" name="ScrumBoard">833C6B8E853D45E780D2FDA155880FD9</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="TOC Access" id="61F3698103074732B63C1C9C78A4B0C0" action="add">
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="ScrumBoard" type="ItemType" name="ScrumBoard">833C6B8E853D45E780D2FDA155880FD9</source_id>
+    <category>UserStories</category>
+   </Item>
+   <Item type="TOC View" id="55CE7D92F8F54B7F8A44819F51CE4DE9" action="add">
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="ScrumBoard" type="ItemType" name="ScrumBoard">833C6B8E853D45E780D2FDA155880FD9</source_id>
+    <start_page>../customer/ScrumBoard/Desktop.html</start_page>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,55 @@
+﻿<AML>
+ <Item type="List" id="69B994C9B9364EFEBF3F310A792DEBF4" action="add">
+  <name>userstory_team</name>
+  <Relationships>
+   <Item type="Value" id="3295E7963F2D4E69A2CCB8BB14D41BBA" action="add">
+    <label xml:lang="en">1</label>
+    <sort_order>1</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>1</value>
+   </Item>
+   <Item type="Value" id="4FA28DD15F0A45619AFB1BFF7E99F46A" action="add">
+    <label xml:lang="en">2</label>
+    <sort_order>2</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>2</value>
+   </Item>
+   <Item type="Value" id="0A1B551D854146188637CB5D4C34C588" action="add">
+    <label xml:lang="en">3</label>
+    <sort_order>3</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>3</value>
+   </Item>
+   <Item type="Value" id="9A53E8D885BD4D4DAB205DBD53F96A84" action="add">
+    <label xml:lang="en">4</label>
+    <sort_order>4</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>4</value>
+   </Item>
+   <Item type="Value" id="7D2EA7DC39FA434DAD7498D2CFC538A7" action="add">
+    <label xml:lang="en">5</label>
+    <sort_order>5</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>5</value>
+   </Item>
+   <Item type="Value" id="45EB373CAF4B4389A26CB775DB027331" action="add">
+    <label xml:lang="en">6</label>
+    <sort_order>6</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>6</value>
+   </Item>
+   <Item type="Value" id="F119AA1573544FA18E82121CE3556FD8" action="add">
+    <label xml:lang="en">7</label>
+    <sort_order>7</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>7</value>
+   </Item>
+   <Item type="Value" id="97F35847C8E74D5BBADC5703582F42DC" action="add">
+    <label xml:lang="en">8</label>
+    <sort_order>8</sort_order>
+    <source_id keyed_name="userstory_team" type="List">69B994C9B9364EFEBF3F310A792DEBF4</source_id>
+    <value>8</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

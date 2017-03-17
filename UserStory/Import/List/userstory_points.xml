@@ -1,0 +1,80 @@
+﻿<AML>
+ <Item type="List" id="E58AE9B198D445E38E2D03222298BDD1" action="add">
+  <description>Approximate Fibonacci series to 200</description>
+  <name>userstory_points</name>
+  <Relationships>
+   <Item type="Value" id="DCC1ACBC5B4C46DFBD4EDA9379739BA8" action="add">
+    <label xml:lang="en">1</label>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>1</value>
+   </Item>
+   <Item type="Value" id="0C805B94CCC04C34AD67608B1A671188" action="add">
+    <label xml:lang="en">2</label>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>2</value>
+   </Item>
+   <Item type="Value" id="78CE0516577941FDB4B146DDF3B7991B" action="add">
+    <label xml:lang="en">3</label>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>3</value>
+   </Item>
+   <Item type="Value" id="607D563DF6864E858020F675BDEB1342" action="add">
+    <label xml:lang="en">5</label>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>5</value>
+   </Item>
+   <Item type="Value" id="23F7D395879B4596AD8A04FF0C5D1E41" action="add">
+    <label xml:lang="en">8</label>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>8</value>
+   </Item>
+   <Item type="Value" id="98192ABACBBB4766A8C52CBCE2D9F7CC" action="add">
+    <label xml:lang="en">13</label>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>13</value>
+   </Item>
+   <Item type="Value" id="2E180AEAB291472CAB84059C7761D165" action="add">
+    <label xml:lang="en">20</label>
+    <sort_order>896</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>20</value>
+   </Item>
+   <Item type="Value" id="DFB6CDBC064A44948C549A2A2E415ED7" action="add">
+    <label xml:lang="en">30</label>
+    <sort_order>1024</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>30</value>
+   </Item>
+   <Item type="Value" id="3D43546E70A3422EA8A9D7A067B17A97" action="add">
+    <label xml:lang="en">50</label>
+    <sort_order>1152</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>50</value>
+   </Item>
+   <Item type="Value" id="B539B2B68C1D42C58E197934DBD0D12E" action="add">
+    <label xml:lang="en">80</label>
+    <sort_order>1280</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>80</value>
+   </Item>
+   <Item type="Value" id="C76AB2BFDA4F4FDBAAE52339A97A0E61" action="add">
+    <label xml:lang="en">130</label>
+    <sort_order>1408</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>130</value>
+   </Item>
+   <Item type="Value" id="D7020D84C34147DE98DCDBB85D229349" action="add">
+    <label xml:lang="en">200</label>
+    <sort_order>1536</sort_order>
+    <source_id keyed_name="userstory_points" type="List">E58AE9B198D445E38E2D03222298BDD1</source_id>
+    <value>200</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

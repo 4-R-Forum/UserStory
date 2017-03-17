@@ -1,0 +1,61 @@
+﻿<AML>
+ <Item type="List" id="88E746CCF7AB49A783F3DB1750A32182" action="add">
+  <name>userstory_state</name>
+  <Relationships>
+   <Item type="Value" id="25A8DCFB5A0340E4BDEFAFFD42C24E54" action="add">
+    <label xml:lang="en">In Work</label>
+    <sort_order>50</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>In Work</value>
+   </Item>
+   <Item type="Value" id="008D22DBDCC54F1BB2C30FDC1C707724" action="add">
+    <label xml:lang="en">Done</label>
+    <sort_order>75</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Done</value>
+   </Item>
+   <Item type="Value" id="923CC0A63E764AB99A38C84A624DB2DB" action="add">
+    <label xml:lang="en">Cancelled</label>
+    <sort_order>100</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Cancelled</value>
+   </Item>
+   <Item type="Value" id="57EFA57AEF1B4DD0A0C343758E0A161C" action="add">
+    <label xml:lang="en">New</label>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>New</value>
+   </Item>
+   <Item type="Value" id="69C52A36C8C34BEE9AE137083678FAAA" action="add">
+    <label xml:lang="en">Clarify</label>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Clarify</value>
+   </Item>
+   <Item type="Value" id="B0ED1F40D986402686A1512536A2951D" action="add">
+    <label xml:lang="en">Visual</label>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Visual</value>
+   </Item>
+   <Item type="Value" id="B54C4B499FB44BDAA1517F4B98A3AEBF" action="add">
+    <label xml:lang="en">Behavioral</label>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Behavioral</value>
+   </Item>
+   <Item type="Value" id="41795F3D01F94DC2A28D080E7DB33CA1" action="add">
+    <label xml:lang="en">Test</label>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Test</value>
+   </Item>
+   <Item type="Value" id="AF294ECE678C405E919FF6ACFE055E6B" action="add">
+    <label xml:lang="en">Deployed</label>
+    <sort_order>896</sort_order>
+    <source_id keyed_name="userstory_state" type="List">88E746CCF7AB49A783F3DB1750A32182</source_id>
+    <value>Deployed</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

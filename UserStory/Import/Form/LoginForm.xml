@@ -1,0 +1,109 @@
+﻿<AML>
+ <Item type="Form" id="88D799760D334A3B88310035F4BFB5E8" action="add">
+  <category_form>0</category_form>
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>LoginForm</name>
+  <Relationships>
+   <Item type="Body" id="565214CC2E564FEAAE8B4144E5BDD492" action="add">
+    <sort_order>128</sort_order>
+    <source_id keyed_name="LoginForm" type="Form">88D799760D334A3B88310035F4BFB5E8</source_id>
+    <Relationships>
+     <Item type="Field" id="E04FD19B6EA74A07997584C0C753CBBB" action="add">
+      <border_width>0</border_width>
+      <field_type>html</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<script>
+  function get_db()
+  {
+    var InnovatorServerRoot = document.getElementById("input_url").value;
+	if(InnovatorServerRoot)
+	{
+		var qry1=top.aras.newIOMItem("Method");
+		qry1.setProperty("url",InnovatorServerRoot);
+		qry1=qry1.apply("server_get_dblist_for_url");
+                                           var res=qry1.newXMLDocument();
+                                           res.loadXML(qry1.getResult());
+
+	  var dbs = res.selectNodes("/DBList/DB"); 
+	  var database_select_elem = document.getElementById("select_db");	  
+	  for (var i=0; i < dbs.length; i++) {
+		var db = dbs[i];
+		var elOptNew = document.createElement('option');
+		elOptNew.text = db.getAttribute("id");
+		database_select_elem.add(elOptNew);
+	  } 
+	}
+  }
+  
+  
+  function return_values()
+  {
+;
+    if(document.getElementById("input_url").value)
+	{
+     var res="";
+res+="<Item>";	
+ res+="<url>"+document.getElementById("input_url").value+"</url>";
+	 var db=document.getElementById("select_db");
+	 res+="<db>"+db.options[db.selectedIndex].value+"</db>";
+	 res+="<user>"+document.getElementById("input_user").value+"</user>";
+	 res+="<pw>"+document.getElementById("input_pw").value+"</pw>";
+                      res+="</Item>";
+	}
+       //alert(res);
+	window.returnValue=res;
+	window.close();
+
+  }
+
+</script>
+<table>
+<tr>
+  <td width="50px">Url</td>
+  <td width="200px"><input size="64" type="text" id="input_url" onblur="get_db()"/></div></td>
+</tr>
+<tr>
+  <td>DB</td>
+  <td><div id="db" ><select id="select_db" /></div></td>
+</tr>
+<tr>
+  <td>User</td>
+  <td><div id="user" ><input width="100px" type="text" id="input_user" /></div></td>
+</tr>
+  <td>PW</td>
+ <td><div id="pw" ><input width="100px" type="password" id="input_pw" /></div></td>
+</tr>
+<tr>
+<td  colspan="2" align="center">
+<input type="button" id="button1"  value="Send" onclick="return_values()" />
+</td>
+</tr>
+<td  colspan="2" align="center">
+<div>This Action copies the UserStory only.</div>
+<div> Use 'Export Me' and the Import Tool to copy the PackageElements.</div></</td>
+</tr>
+
+</table>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Destination</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="565214CC2E564FEAAE8B4144E5BDD492" type="Body">565214CC2E564FEAAE8B4144E5BDD492</source_id>
+      <tab_stop>1</tab_stop>
+      <text_align>center</text_align>
+      <x>14</x>
+      <y>9</y>
+      <name>html0</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

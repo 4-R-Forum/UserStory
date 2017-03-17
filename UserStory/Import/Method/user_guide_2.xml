@@ -1,0 +1,41 @@
+﻿<AML>
+ <Item type="Method" id="8D553943EB9349AF8BC402F7A9823E0D" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Innovator innov=this.getInnovator();
+string qry1=@"
+<AML>
+<Item type=""UserStory"" select=""classification,item_number,name,userstory_type, as_a,i_want_to,so_that,user_steps,test_plan_sort,implementation_outline,video_url,acceptance_criteria"" action=""GetItemRepeatConfig"" id=""{0}"">
+	<Relationships>
+		<Item type=""UserStoryRelated"" repeatProp=""related_id"" select=""sort_order,related_id"" repeatTimes=""0"" />
+		<Item type=""UserStoryTask"" action=""get"" select=""item_number,name"">
+			<Relationships>
+	  			<Item type=""UserTaskStep"" action=""get"" select=""item_number,step"">
+					 <Relationships>
+							<Item type=""UserStepResult"" action=""get"" select=""sort_order,result""/>
+		 			</Relationships>
+	   			</Item>
+ 			</Relationships>
+ 		</Item>
+	</Relationships>
+</Item>
+</AML>
+";
+qry1=string.Format(qry1,this.getID());
+Item res1=innov.applyAML(qry1);
+I18NSessionContext cntx = innov.getI18NSessionContext();
+DateTime utc_now=DateTime.UtcNow;
+//DateTime corp_now=utc_now.AddMinutes(cntx.GetCorporateToLocalOffset());
+DateTime corp_now=utc_now.AddMinutes(-8*60);
+string pattern=cntx.GetUIDatePattern("short_date");
+string corp_now_string=corp_now.ToString(pattern);
+if (!res1.isError())
+{
+	Item qry2=this.newItem("Header");
+	qry2.setProperty("date",corp_now_string);
+	res1.appendItem(qry2);
+}
+return res1;]]></method_code>
+  <method_type>C#</method_type>
+  <name>user_guide_2</name>
+ </Item>
+</AML>

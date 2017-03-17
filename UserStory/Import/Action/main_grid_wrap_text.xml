@@ -1,0 +1,15 @@
+﻿<AML>
+ <Item type="Action" id="58B157F0E223488CA7B28507BBCAFA0B" action="add">
+  <item_query />
+  <label xml:lang="en">Wrap Text Toggle</label>
+  <location>client</location>
+  <method keyed_name="main_grid_toggle_wrap_text" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>main_grid_toggle_wrap_text</name>
+   </Item>
+  </method>
+  <target>none</target>
+  <type>generic</type>
+  <name>main_grid_wrap_text</name>
+ </Item>
+</AML>

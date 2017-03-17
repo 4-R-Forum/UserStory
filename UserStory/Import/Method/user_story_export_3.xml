@@ -1,0 +1,55 @@
+﻿<AML>
+ <Item type="Method" id="759061644935488D8573C076C5BCE827" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[//debugger;
+var innov=document.thisItem.getInnovator();
+var base_url=top.aras.getBaseURL();
+base_url=base_url.replace("/Client","");
+var db=top.aras.getDatabase();
+var user="root";
+var pw="innovator";
+var main_wnd=top.aras.getMainWindow();
+var vault=main_wnd.vault;
+var mf_text="";
+var folder=vault.selectFolder();
+
+var cu=document.clientUpgrade;
+cu.login(base_url,db,user,pw,folder);
+
+var qry0=document.thisItem.newItem("UserStory");
+qry0.setAttribute("levels","1");
+qry0.setID(document.thisItem.getID());
+qry0=qry0.apply("get");
+if (qry0.isError()) {top.aras.AlertError(qry0.getErrorString()); return;}
+var qry1=qry0.getRelationships("UserStoryElement");
+for (var i=0;i<qry1.getItemCount();i++)
+{
+	var this_element=qry1.getItemByIndex(i);
+	if (this_element.getProperty("select_for_export","0")==="1")
+	{
+		var this_type=this_element.getProperty("packagegroup");
+		var this_kn=this_element.getProperty("element_name");
+		var this_pd=this_element.getPropertyAttribute("packagedefinition","keyed_name");
+		var this_pd_folder=this_pd.replace("com.aras.innovator.solution.","");
+		var this_folder=folder+"\\"+this_pd_folder+"\\Import\\";
+		cu.setfolder(this_folder);
+		var this_pe=innov.getItemByKeyedName(this_type,this_kn);
+		if (!this_pe) { top.aras.AlertError("Package Element "+this_type+":"+this_kn+" not found");}
+		var this_id=this_pe.getProperty("config_id");
+		cu.packageItem(this_id, this_kn, this_type, this_pd );
+		if (mf_text.indexOf(this_pd)<0)
+		{ 
+		   mf_text+=" <package name='"+this_pd+"' path='"+this_pd_folder+"\\Import\\' />\r\n";
+		}
+    }
+}
+mf_text="<imports>\r\n"+mf_text+"</imports>\r\n";
+ok = vault.WriteText(folder+"\\imports.mf",mf_text);
+if (!ok) { top.aras.AlertError("Error writing file manifest file");}
+
+top.aras.AlertSuccess("UserStory exported successfully");
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>user_story_export_3</name>
+ </Item>
+</AML>

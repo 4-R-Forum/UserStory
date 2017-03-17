@@ -1,0 +1,19 @@
+﻿<AML>
+ <Item type="Method" id="EE20A8E721FB48138E96E53A6CC8836F" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[var items_grid=top.main.work;
+if (!items_grid)
+{
+  top.aras.AlertError("Wrap text only works in the main grid");
+}
+else
+{
+  grid=items_grid.grid;
+  var wrap=grid.justify;
+  grid.justify=!wrap;
+  items_grid.searchContainer.runSearch();
+}]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>main_grid_toggle_wrap_text</name>
+ </Item>
+</AML>

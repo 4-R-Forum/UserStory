@@ -1,0 +1,116 @@
+﻿<AML>
+ <Item type="Method" id="97EB897ADC104A928193C88674280E6B" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[
+// create an object to pass parameters to ShowFormAsADialog
+var param= new Object();
+param.title="Copy UserStory to Url";
+param.formId="88D799760D334A3B88310035F4BFB5E8";
+param.item=this.newItem("Form");
+param.aras=top.aras;
+var aml="";
+
+// collect credentials to login to destination
+var res= showModalDialog("ShowFormAsADialog.html", param,
+  "dialogHeight:200px; dialogWidth:500px; " +
+  "status:0; help:0; resizable:1, scroll:0;");
+// load the dialog result to an Item so we can use IOM to get values
+
+if (res)
+{	
+//debugger;
+	var creds=this.newItem();
+	creds.loadAML(res);
+	var dest_url=creds.getProperty("url");
+	var base_url=top.aras.getServerBaseURL();
+	base_url=base_url.replace("/Server/","");
+	if( dest_url===base_url)
+	{
+		var msg="<b>Use AML and Nash to copy to same URL.</b><br/>";
+		msg+=    "Innovator does not allow mulitple logins to the same URL<br/>";
+		msg+=    "in the same client process,  for security reasons.";
+		top.aras.AlertError(msg);
+		return;
+	}
+	// create a connection to destination  
+	var f = top.aras.IomFactory;
+	var innov= f.CreateInnovator(null);
+	var conn=f.CreateHttpServerConnection(
+	  creds.getProperty("url"),
+	  creds.getProperty("db"),
+	  creds.getProperty("user"),
+	  creds.getProperty("pw")); 
+	var login=conn.Login();
+	if (login.isError())
+	{
+	  top.aras.AlertError("Login to destination failed");
+	  return;
+	}
+	// create an Innovator instance for destination
+	var dest_innov=f.CreateInnovator(conn);
+}
+// get ids of UserStories to copy
+var selected_ids;  
+if (top.main)
+{ 
+  // called from the main grid
+  var grid=top.main.work.grid;
+  selected_ids=grid.GetSelectedItemIDs(",");
+}
+else
+{
+  // called from an Item window
+  selected_ids=top.itemID;
+}
+// for each user story
+var stories=selected_ids.split(",");
+// exit if nothing selected
+if (stories.length===0)
+{
+  top.aras.AlertError("Nothing selected");
+  return;
+}
+for (var i=0;i<stories.length;i++)
+{
+  // get the story
+  var qry1=this.newItem("UserStory");
+  qry1.setAttribute("levels","2");
+  qry1.setID(stories[i]);
+  qry1=qry1.apply("get");
+  // set the action to merge for every Item
+  var qry2=qry1.getItemsByXPath("//Item");
+  for (var j=0;j<qry2.getItemCount();j++)
+  {
+    qry2.getItemByIndex(j).setAction("merge");
+  }
+  // put the resulting AML into a new IOM.Item with an authenticated connection to destination
+  if(creds)
+  {
+  var qry3=dest_innov.newItem();
+  qry3.loadAML(qry1.dom.xml);
+	   qry3=qry3.apply();
+	  if (qry3.isError())
+	  {
+	     top.aras.AlertError(qry1.getProperty("name")+" failed to copy <br/>"+
+	        qry3.getErrorString());
+	  }  
+  }
+  else
+  
+  {
+	aml+=qry1.node.xml;
+  }
+}
+if (!creds)
+{
+	var main_wnd=top.aras.getMainWindow();
+	var vault=main_wnd.vault;
+	var fn=vault.selectFile();
+	vault.WriteText(fn,"<AML>"+aml+"</AML>");
+}
+top.aras.AlertSuccess("Copy UserStories Complete");
+]]></method_code>
+  <method_type>JavaScript</method_type>
+  <name>userstory_copy_to_url</name>
+ </Item>
+</AML>

@@ -1,0 +1,19 @@
+﻿<AML>
+ <Item type="List" id="4C7A176F63124E00A091C7E1A728EFB7" action="add">
+  <name>userstory_structure_type</name>
+  <Relationships>
+   <Item type="Value" id="0C0472B6E00347B4A1311A9012B4BAEB" action="add">
+    <label xml:lang="en">Feature</label>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="userstory_structure_type" type="List">4C7A176F63124E00A091C7E1A728EFB7</source_id>
+    <value>Feature</value>
+   </Item>
+   <Item type="Value" id="5644C988CD6A4A14AF7D36DD51ADF4DE" action="add">
+    <label xml:lang="en">e2e</label>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="userstory_structure_type" type="List">4C7A176F63124E00A091C7E1A728EFB7</source_id>
+    <value>e2e</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

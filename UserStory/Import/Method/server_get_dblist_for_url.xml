@@ -1,0 +1,20 @@
+﻿<AML>
+ <Item type="Method" id="B9C80F1435B34913825A49AD50E7534F" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[string url= this.getProperty("url","http://vdcwl481.vdcham.tsg.ge.com/MBOM_dev");
+WebRequest rq = (HttpWebRequest)WebRequest.Create(url+"/Server/DBList.aspx");
+rq.Method = "GET";
+rq.ContentType = "text/xml; encoding='utf-8'";
+WebResponse resp = rq.GetResponse();
+            // Get the stream containing content returned by the server.
+            Stream dataStream = resp.GetResponseStream ();
+            // Open the stream using a StreamReader for easy access.
+            StreamReader reader = new StreamReader (dataStream);
+            // Read the content.
+            string responseFromServer = reader.ReadToEnd ();
+            // Display the content.
+return this.getInnovator().newResult(responseFromServer);]]></method_code>
+  <method_type>C#</method_type>
+  <name>server_get_dblist_for_url</name>
+ </Item>
+</AML>

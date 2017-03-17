@@ -1,0 +1,21 @@
+﻿<AML>
+ <Item type="Identity" id="C170DB26E81649A598823892845A3268" action="add">
+  <is_alias>0</is_alias>
+  <name>User Story Admins</name>
+  <Relationships />
+ </Item>
+ <Item type="Member" id="BA7FD172C51D4CBD9A4DC453C308D629" action="add">
+  <related_id keyed_name="Administrators" type="Identity">2618D6F5A90949BAA7E920D1B04C7EE1</related_id>
+  <sort_order>640</sort_order>
+  <source_id keyed_name="User Story Admins" type="Identity">C170DB26E81649A598823892845A3268</source_id>
+ </Item>
+ <Item type="Member" id="F293228046B949428A85497DE2843166" action="add">
+  <related_id keyed_name="Innovator Admin" type="Identity">
+   <Item type="Identity" action="get" select="id">
+    <name>Innovator Admin</name>
+   </Item>
+  </related_id>
+  <sort_order>256</sort_order>
+  <source_id keyed_name="User Story Admins" type="Identity">C170DB26E81649A598823892845A3268</source_id>
+ </Item>
+</AML>

@@ -1,0 +1,25 @@
+﻿<AML>
+ <Item type="List" id="810F98ED5B814168A80478E928A77476" action="add">
+  <name>userstory_type</name>
+  <Relationships>
+   <Item type="Value" id="2407B7E602BB40F5A51CE9BE2EE223CA" action="add">
+    <label xml:lang="en">story</label>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="userstory_type" type="List">810F98ED5B814168A80478E928A77476</source_id>
+    <value>story</value>
+   </Item>
+   <Item type="Value" id="F571D5408E064C4CA56ABD012D3AF26D" action="add">
+    <label xml:lang="en">functional_area</label>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="userstory_type" type="List">810F98ED5B814168A80478E928A77476</source_id>
+    <value>functional_area</value>
+   </Item>
+   <Item type="Value" id="9C052749C1204008A2F053035DA932E8" action="add">
+    <label xml:lang="en">phase</label>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="userstory_type" type="List">810F98ED5B814168A80478E928A77476</source_id>
+    <value>phase</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

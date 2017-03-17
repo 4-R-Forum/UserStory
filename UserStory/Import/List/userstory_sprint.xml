@@ -1,0 +1,55 @@
+﻿<AML>
+ <Item type="List" id="A022B02B5B7B4702B4E2676421A6BD18" action="add">
+  <name>userstory_sprint</name>
+  <Relationships>
+   <Item type="Value" id="78637A9D88BC47398E1C252DCB88A3F9" action="add">
+    <label xml:lang="en">00</label>
+    <sort_order>0</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>00</value>
+   </Item>
+   <Item type="Value" id="E72AEC4D9B24412699528B8B4F5B2ED6" action="add">
+    <label xml:lang="en">01</label>
+    <sort_order>1</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>01</value>
+   </Item>
+   <Item type="Value" id="9F9E27ABEE0E47BE952747ECED9F48B7" action="add">
+    <label xml:lang="en">02</label>
+    <sort_order>2</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>02</value>
+   </Item>
+   <Item type="Value" id="B51F41BDCF01479687E5572F2BB2F163" action="add">
+    <label xml:lang="en">03</label>
+    <sort_order>3</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>03</value>
+   </Item>
+   <Item type="Value" id="B222E4B1F374436CB5E5040C94CC01D9" action="add">
+    <label xml:lang="en">04</label>
+    <sort_order>4</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>04</value>
+   </Item>
+   <Item type="Value" id="C5467760E1BF47D18ECBC64F430CF817" action="add">
+    <label xml:lang="en">05</label>
+    <sort_order>5</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>05</value>
+   </Item>
+   <Item type="Value" id="E1B5C0F8E4E14FF3835C719160DDE940" action="add">
+    <label xml:lang="en">06</label>
+    <sort_order>6</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>06</value>
+   </Item>
+   <Item type="Value" id="8CF032E8F04E4D8EA8D6CE1D1253B145" action="add">
+    <label xml:lang="en">07</label>
+    <sort_order>7</sort_order>
+    <source_id keyed_name="userstory_sprint" type="List">A022B02B5B7B4702B4E2676421A6BD18</source_id>
+    <value>07</value>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

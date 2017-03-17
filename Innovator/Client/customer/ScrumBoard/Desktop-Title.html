@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<!-- (c) Copyright by Aras Corporation, 2004-2013. -->
+<html>
+<head>
+<style type="text/css">
+	@import "../../styles/default.css";
+
+	html,body {
+		overflow: hidden;
+		width : 100%;
+		height : 100%;
+		margin : 0px;
+		padding : 0px;
+		background-color:buttonface;
+	}
+</style>
+<script type="text/javascript">
+	var titleView = "grid";
+
+	function set_length(items_length) {
+		document.getElementById("items_length").innerHTML = items_length + " ";
+	}
+
+	function toggleView() {
+		if (titleView == "area") {
+			parent.document.getElementById("WSarea").src  = "Desktop-Grid.html";
+			titleView = "grid";
+		}
+		else {
+			parent.loadDesktopItems()
+			parent.WSarea.location  = "Desktop-Area.html";
+			titleView = "area";
+		}
+	}
+
+	onload = function() {
+		document.getElementById("items_length").innerHTML = parent.DesktopItems.length + " ";
+		var s = parent.WSarea.location.toString();
+		if (s.indexOf("Desktop-Area.html") >= 0) {
+			titleView = "area";
+		}
+		else if (s.indexOf("Desktop-Grid.html") >= 0) {
+			titleView = "grid";
+		}
+		var topWnd = parent.parent.parent;
+		//document.getElementById("desktop4user_label").innerHTML = topWnd.aras.getResource("", "desktop.desktop_for_user", topWnd.aras.getLoginName());
+		document.getElementById("desktop4user_label").innerHTML = "<b>Scrum Board - UserStories </b>";
+		document.getElementById("itms").innerHTML = topWnd.aras.getResource("", "desktop.items");
+		document.getElementById("ViewToggle").value = topWnd.aras.getResource("", "desktop.switch_view");
+	}
+</script>
+</head>
+<body>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>
+				<p class="vvbig" id="desktop4user_label" style="margin:0px;"></p>
+			</td>
+
+			<td align="center">
+				<input type="button" width="40" name="ViewToggle" id="ViewToggle" onclick="toggleView();">
+			</td>
+			<td>
+				<b id="items_length"></b>
+				<span id="itms"></span>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

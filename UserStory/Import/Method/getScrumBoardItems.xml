@@ -1,0 +1,50 @@
+﻿<AML>
+ <Item type="Method" id="23949B1DF07A414A868D7868676E21A7" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Innovator innov=this.getInnovator();
+
+//return innov.newError(this.getProperty("select_stories",""));
+
+string qry1=@"
+<AML>
+<Item type='ScrumBoardItem' action='get' select='itemtype,x_pos,y_pos,quarters_img'>
+ <userstory_state>{0}</userstory_state>
+</Item>
+</AML>
+";
+qry1=string.Format(qry1,this.getProperty("select_stories","In Work"));
+Item res1 =innov.applyAML(qry1);
+string qry2=@"
+<AML>
+<Item type='Value' action='get' select='label,value'>
+  <source_id>
+   <Item type='List' action='get'>
+     <name>ScrumBoardItem</name>
+   </Item>
+ </source_id>
+</Item>
+</AML>
+";
+Item res2 =innov.applyAML(qry2);
+
+Dictionary<string, string> id_type = new Dictionary<string, string>();
+for (int j=0;j<res2.getItemCount();j++)
+{
+    id_type[res2.getItemByIndex(j).getProperty("value")] = res2.getItemByIndex(j).getProperty("label");
+}
+
+for (int i=0;i<res1.getItemCount();i++)
+{
+ Item this_item=res1.getItemByIndex(i);
+ this_item.setType(id_type[this_item.getProperty("itemtype")]);
+ this_item.setProperty("source_id",this_item.getID());
+ this_item.setProperty("x_pos",this_item.getProperty("x_pos","0"));
+ this_item.setProperty("y_pos",this_item.getProperty("y_pos","0"));
+ this_item.setProperty("source_type",this_item.getProperty("itemtype"));
+ 
+}
+return res1;]]></method_code>
+  <method_type>C#</method_type>
+  <name>getScrumBoardItems</name>
+ </Item>
+</AML>
